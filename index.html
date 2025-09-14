@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Aguilar - Desarrollador Full Stack & Especialista en Soluciones Digitales</title>
-    <meta name="description" content="Desarrollador Full Stack con expertise en React, Node.js, Python, IA y Big Data. Creación de soluciones web personalizadas y optimizadas.">
-    <meta name="keywords" content="desarrollador full stack, desarrollo web, react, node.js, python, inteligencia artificial, big data, SEO, aplicaciones web">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Carlos Aguilar - Desarrollador Full Stack & Especialista en IA & Big Data</title>
+    <meta name="description" content="Desarrollador Full Stack con 5+ años de experiencia en React, Node.js, Python, IA y Big Data. Especialista en soluciones digitales escalables, automatización y transformación tecnológica.">
+    <meta name="keywords" content="desarrollador full stack, react, node.js, python, inteligencia artificial, big data, machine learning, desarrollo web, seo, aplicaciones empresariales, django, tensorflow, postgresql, mongodb">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
@@ -20,21 +20,22 @@
             --light-gray: #f5f5f5;
             --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
             line-height: 1.6;
             padding: 20px;
+            transition: background 0.4s ease;
         }
-        
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -43,8 +44,9 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             position: relative;
+            transition: background 0.4s ease;
         }
-        
+
         .loading-bar {
             position: fixed;
             top: 0;
@@ -55,20 +57,21 @@
             z-index: 1000;
             transition: width 0.4s ease;
         }
-        
+
         header {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             padding: 40px 30px;
             text-align: center;
             position: relative;
+            transition: background 0.4s ease;
         }
-        
+
         .header-content {
             position: relative;
             z-index: 2;
         }
-        
+
         .profile-img {
             width: 160px;
             height: 160px;
@@ -82,22 +85,25 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
         }
-        
+
         .profile-img:hover {
             transform: scale(1.05);
         }
-        
-        .profile-img i {
+
+        .profile-img i,
+        .profile-img img {
             font-size: 80px;
             color: var(--gray);
         }
-        
+
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
             font-weight: 700;
+            letter-spacing: -0.5px;
+            transition: color 0.3s ease;
         }
-        
+
         .tagline {
             font-size: 1.3rem;
             font-weight: 300;
@@ -105,8 +111,10 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            color: rgba(255,255,255,0.9);
+            transition: color 0.3s ease;
         }
-        
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -114,7 +122,7 @@
             gap: 25px;
             margin-top: 25px;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
@@ -124,12 +132,12 @@
             border-radius: 30px;
             transition: var(--transition);
         }
-        
+
         .contact-item:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
         }
-        
+
         .contact-item i {
             color: var(--secondary);
             background: white;
@@ -141,23 +149,24 @@
             justify-content: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
-        
+
         .content {
             padding: 40px;
+            transition: color 0.3s ease;
         }
-        
+
         section {
             margin-bottom: 40px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         h2 {
             color: var(--primary);
             border-bottom: 3px solid var(--secondary);
@@ -167,8 +176,10 @@
             align-items: center;
             gap: 12px;
             font-size: 1.8rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-        
+
         h2 i {
             color: var(--secondary);
             background: var(--light);
@@ -180,7 +191,7 @@
             justify-content: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         h3 {
             color: var(--primary);
             margin-bottom: 15px;
@@ -188,18 +199,19 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: color 0.3s ease;
         }
-        
+
         h3 i {
             color: var(--secondary);
         }
-        
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .skill-category {
             background: var(--light-gray);
             border-radius: 10px;
@@ -207,15 +219,16 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-        
+
         .skill-category:hover {
             transform: translateY(-5px);
         }
-        
+
         .skill-list {
             list-style: none;
+            padding-left: 5px;
         }
-        
+
         .skill-list li {
             padding: 10px 0;
             display: flex;
@@ -223,22 +236,22 @@
             justify-content: space-between;
             border-bottom: 1px dashed #e0e0e0;
         }
-        
+
         .skill-list li:last-child {
             border-bottom: none;
         }
-        
+
         .skill-list li span {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         .skill-list li i {
             color: var(--secondary);
             width: 25px;
         }
-        
+
         .skill-level {
             display: inline-block;
             height: 8px;
@@ -248,19 +261,20 @@
             overflow: hidden;
             margin-left: 10px;
         }
-        
+
         .skill-level-bar {
             height: 100%;
             background: var(--secondary);
             border-radius: 4px;
+            transition: width 1.5s ease;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .service-card {
             background: white;
             border: 1px solid #e0e0e0;
@@ -269,19 +283,19 @@
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
             border-color: var(--secondary);
         }
-        
+
         .values {
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
         }
-        
+
         .value-card {
             flex: 1;
             min-width: 250px;
@@ -291,17 +305,17 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-        
+
         .value-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .project-card {
             background: white;
             border-radius: 10px;
@@ -309,11 +323,11 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
         }
-        
+
         .project-card:hover {
             transform: translateY(-8px);
         }
-        
+
         .project-img {
             height: 180px;
             background: linear-gradient(45deg, var(--secondary), var(--primary));
@@ -323,18 +337,18 @@
             color: white;
             font-size: 3rem;
         }
-        
+
         .project-content {
             padding: 20px;
         }
-        
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 15px;
         }
-        
+
         .project-tag {
             background: var(--light);
             color: var(--dark);
@@ -342,13 +356,13 @@
             border-radius: 20px;
             font-size: 0.8rem;
         }
-        
+
         .certifications {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
-        
+
         .cert-card {
             flex: 1;
             min-width: 250px;
@@ -358,13 +372,13 @@
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .testimonial-card {
             background: white;
             border-radius: 10px;
@@ -372,7 +386,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             position: relative;
         }
-        
+
         .testimonial-card:before {
             content: """;
             position: absolute;
@@ -382,67 +396,86 @@
             color: var(--light);
             z-index: 0;
         }
-        
+
         .testimonial-content {
             position: relative;
             z-index: 1;
         }
-        
+
         .testimonial-author {
             display: flex;
             align-items: center;
             margin-top: 20px;
         }
-        
-        .testimonial-author img {
+
+        .testimonial-author img,
+        .testimonial-author i {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 15px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
         }
-        
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             text-align: center;
         }
-        
+
         .stat-card {
             padding: 20px;
             background: var(--light);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
         }
-        
+
+        .stat-label {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
         .cta {
             text-align: center;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             padding: 50px 40px;
             border-radius: 10px;
+            margin-top: 50px;
+            transition: background 0.4s ease;
         }
-        
+
         .cta h2 {
             color: white;
             border-bottom: none;
             justify-content: center;
+            font-size: 2.2rem;
+            transition: color 0.3s ease;
         }
-        
+
         .cta p {
             max-width: 700px;
             margin: 0 auto 25px;
             font-size: 1.2rem;
+            opacity: 0.9;
+            transition: color 0.3s ease;
         }
-        
+
         .btn {
             display: inline-block;
             background: white;
@@ -456,24 +489,25 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
-        
+
         .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         .btn-outline {
             background: transparent;
             border: 2px solid white;
             color: white;
         }
-        
+
         .btn-outline:hover {
             background: white;
             color: var(--secondary);
         }
-        
+
         .badge {
             display: inline-block;
             background: var(--secondary);
@@ -483,15 +517,16 @@
             font-size: 0.8rem;
             margin-left: 8px;
             font-weight: 500;
+            vertical-align: middle;
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-link {
             display: flex;
             align-items: center;
@@ -506,26 +541,26 @@
             transition: var(--transition);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .social-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .download-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 100;
         }
-        
+
         .theme-toggle {
             position: fixed;
             bottom: 80px;
             right: 20px;
             z-index: 100;
         }
-        
+
         .floating-btn {
             width: 60px;
             height: 60px;
@@ -537,13 +572,100 @@
             color: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.2rem;
         }
-        
+
         .floating-btn:hover {
             transform: translateY(-5px) rotate(10deg);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
+
+        /* Animación barras de habilidad */
+        @keyframes progress {
+            from { width: 0; }
+        }
         
+        .skill-level-bar {
+            animation: progress 1.5s ease-out forwards;
+        }
+
+        /* Modo Oscuro */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+            color: #e2e8f0 !important;
+        }
+
+        .container.dark-mode {
+            background: #1e293b !important;
+            color: #e2e8f0 !important;
+        }
+
+        .header-content.dark-mode {
+            color: #e2e8f0 !important;
+        }
+
+        .content.dark-mode {
+            color: #e2e8f0 !important;
+        }
+
+        header.dark-mode {
+            background: linear-gradient(to right, #1e293b, #334155) !important;
+        }
+
+        .cta.dark-mode {
+            background: linear-gradient(to right, #1e293b, #334155) !important;
+            color: #e2e8f0 !important;
+        }
+
+        .skill-category.dark-mode,
+        .service-card.dark-mode,
+        .value-card.dark-mode,
+        .project-card.dark-mode,
+        .testimonial-card.dark-mode,
+        .cert-card.dark-mode,
+        .stat-card.dark-mode {
+            background: #334155 !important;
+            border-color: #475569 !important;
+            color: #e2e8f0 !important;
+        }
+
+        .skill-level-bar,
+        .progress-bar {
+            background: #60a5fa !important;
+        }
+
+        .social-link.dark-mode {
+            background: #334155 !important;
+            color: #60a5fa !important;
+        }
+
+        .floating-btn.dark-mode {
+            background: #334155 !important;
+            color: #60a5fa !important;
+        }
+
+        .btn-outline.dark-mode {
+            border-color: #60a5fa !important;
+            color: #60a5fa !important;
+        }
+
+        .btn-outline.dark-mode:hover {
+            background: #60a5fa !important;
+            color: #1e293b !important;
+        }
+
+        .btn.dark-mode {
+            background: #60a5fa !important;
+            color: #1e293b !important;
+        }
+
+        .btn.dark-mode:hover {
+            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3) !important;
+        }
+
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
@@ -556,7 +678,7 @@
                 justify-content: center;
             }
             
-            .services-grid, .projects, .skills-grid, .testimonials, .stats {
+            .services-grid, .projects, .skills-grid, .testimonials, .stats, .certifications {
                 grid-template-columns: 1fr;
             }
             
@@ -570,6 +692,10 @@
             
             .content {
                 padding: 25px;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
             }
             
             .download-btn, .theme-toggle {
@@ -589,11 +715,11 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <div class="profile-img">
-                    <i class="fas fa-code"></i>
-                </div>
+                <!-- Foto personal (reemplaza la URL si tienes una) -->
+                <img src="https://charlys-store.com/foto.jpg" alt="Carlos Aguilar" style="width: 160px; height: 160px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); margin: 0 auto 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                
                 <h1>Carlos Aguilar</h1>
-                <p class="tagline">Desarrollador Full Stack & Especialista en Soluciones Digitales</p>
+                <p class="tagline">Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -612,83 +738,86 @@
         </header>
         
         <div class="content">
-            <section class="profile">
+            <section class="profile" data-section="profile">
                 <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
-                <p>Desarrollador full stack con más de 5 años de experiencia creando soluciones digitales personalizadas, optimizadas y visualmente atractivas. Especializado en el desarrollo de aplicaciones web modernas, inteligencia artificial y big data. Comprometido con la excelencia técnica, la experiencia del usuario y la satisfacción del cliente. Mi objetivo es transformar ideas en productos digitales funcionales y escalables.</p>
+                <p>Desarrollador Full Stack con más de <strong>5 años de experiencia</strong> en el diseño y construcción de soluciones digitales de alto rendimiento para empresas y startups. Especializado en <strong>React, Node.js, Python (Django/TensorFlow)</strong> y arquitecturas de <strong>Big Data</strong>. He liderado proyectos desde cero hasta producción, mejorando eficiencias operativas en un <strong>40%+</strong> y aumentando conversiones hasta en un <strong>200%</strong>. Apasionado por la innovación, la automatización y la mejora continua mediante tecnología.</p>
             </section>
             
-            <section class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Proyectos Completados</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Clientes Satisfechos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Años de Experiencia</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Tecnologías Dominadas</div>
+            <section class="stats" data-section="stats">
+                <h2><i class="fas fa-chart-line"></i> Estadísticas</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Proyectos Entregados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Tasa de Satisfacción</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Tecnologías Dominadas</div>
+                    </div>
                 </div>
             </section>
             
-            <section class="skills">
+            <section class="skills" data-section="skills">
                 <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3><i class="fab fa-react"></i> Frontend</h3>
                         <ul class="skill-list">
                             <li><span><i class="fab fa-html5"></i> HTML5</span><div class="skill-level"><div class="skill-level-bar" style="width: 95%"></div></div></li>
-                            <li><span><i class="fab fa-css3-alt"></i> CSS3</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fab fa-js"></i> JavaScript</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fab fa-react"></i> React</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fab fa-css3-alt"></i> CSS3 / SCSS</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fab fa-js"></i> JavaScript / TypeScript</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
+                            <li><span><i class="fab fa-react"></i> React + Redux</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
                             <li><span><i class="fab fa-angular"></i> Angular</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-rocket"></i> Astro</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-cube"></i> Quasar</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
+                            <li><span><i class="fas fa-rocket"></i> Astro.js</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-cube"></i> Quasar Framework</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
                         </ul>
                     </div>
                     
                     <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend</h3>
+                        <h3><i class="fas fa-server"></i> Backend & APIs</h3>
                         <ul class="skill-list">
-                            <li><span><i class="fab fa-node-js"></i> Node.js</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fab fa-php"></i> PHP <span class="badge">Laravel</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fab fa-python"></i> Python <span class="badge">Django</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fab fa-java"></i> Java</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-cogs"></i> Odoo</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-code"></i> APIs RESTful</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fab fa-node-js"></i> Node.js + Express</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fab fa-python"></i> Python + Django / Flask</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
+                            <li><span><i class="fab fa-php"></i> PHP + Laravel</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fab fa-java"></i> Java (Spring Boot)</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-cogs"></i> Odoo ERP</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-code"></i> RESTful / GraphQL APIs</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
                         </ul>
                     </div>
                     
                     <div class="skill-category">
-                        <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+                        <h3><i class="fas fa-database"></i> Bases de Datos & Cloud</h3>
                         <ul class="skill-list">
-                            <li><span><i class="fas fa-database"></i> SQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> PostgreSQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> MySQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> MongoDB</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-chart-bar"></i> Big Data Solutions</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-database"></i> PostgreSQL / MySQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fas fa-database"></i> MongoDB / Redis</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fas fa-chart-bar"></i> Big Data (ETL, Pandas, Spark)</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fab fa-docker"></i> Docker / CI/CD</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fab fa-aws"></i> AWS / Google Cloud</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
                         </ul>
                     </div>
                     
                     <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+                        <h3><i class="fas fa-brain"></i> Inteligencia Artificial & Machine Learning</h3>
                         <ul class="skill-list">
-                            <li><span><i class="fas fa-robot"></i> Machine Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fas fa-brain"></i> Deep Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-language"></i> Procesamiento NLP</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-eye"></i> Computer Vision</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
-                            <li><span><i class="fas fa-project-diagram"></i> TensorFlow/PyTorch</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-robot"></i> Machine Learning (Scikit-learn)</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fas fa-brain"></i> Deep Learning (TensorFlow, PyTorch)</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-language"></i> NLP & LLMs (GPT, Transformers)</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-eye"></i> Computer Vision (OpenCV)</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
+                            <li><span><i class="fas fa-project-diagram"></i> Model Deployment (Flask, FastAPI)</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
                         </ul>
                     </div>
                 </div>
             </section>
             
-            <section class="projects">
+            <section class="projects" data-section="projects">
                 <h2><i class="fas fa-briefcase"></i> Proyectos Destacados</h2>
                 <div class="projects">
                     <div class="project-card">
@@ -696,12 +825,13 @@
                             <i class="fas fa-shopping-cart"></i>
                         </div>
                         <div class="project-content">
-                            <h3>E-commerce Platform</h3>
-                            <p>Plataforma de comercio electrónico desarrollada con React, Node.js y MongoDB. Incluye panel de administración, pasarela de pago y sistema de recomendaciones.</p>
+                            <h3>Plataforma E-commerce con Recomendaciones Inteligentes</h3>
+                            <p>Desarrollo integral de una tienda online con panel administrativo, pasarela de pago (Stripe), sistema de recomendaciones basado en ML y optimización SEO. Resultado: +150% ventas en 4 meses.</p>
                             <div class="project-tags">
                                 <span class="project-tag">React</span>
                                 <span class="project-tag">Node.js</span>
                                 <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">ML</span>
                             </div>
                         </div>
                     </div>
@@ -711,12 +841,13 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="project-content">
-                            <h3>Sistema de Análisis de Datos</h3>
-                            <p>Sistema de big data para análisis predictivo de ventas utilizando Python, TensorFlow y PostgreSQL. Procesa millones de registros para generar insights empresariales.</p>
+                            <h3>Sistema Predictivo de Ventas para Retail</h3>
+                            <p>Solución de Big Data con Python y TensorFlow que analiza 2M+ registros mensuales para predecir demanda, reducir inventario muerto y optimizar logística. Ahorro estimado: $85K/año.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
                                 <span class="project-tag">TensorFlow</span>
                                 <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Pandas</span>
                             </div>
                         </div>
                     </div>
@@ -726,11 +857,12 @@
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div class="project-content">
-                            <h3>App de Gestión de Tareas</h3>
-                            <p>Aplicación web progresiva para gestión de proyectos desarrollada con Angular and Laravel. Incluye funciones colaborativas en tiempo real y reporting avanzado.</p>
+                            <h3>App de Gestión de Tareas con Colaboración en Tiempo Real</h3>
+                            <p>Aplicación PWA desarrollada con Angular y Laravel, con notificaciones push, chat en vivo y dashboard de productividad. Usada por 500+ usuarios activos mensuales.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Angular</span>
                                 <span class="project-tag">Laravel</span>
+                                <span class="project-tag">WebSockets</span>
                                 <span class="project-tag">PWA</span>
                             </div>
                         </div>
@@ -738,16 +870,14 @@
                 </div>
             </section>
             
-            <section class="testimonials">
+            <section class="testimonials" data-section="testimonials">
                 <h2><i class="fas fa-comments"></i> Testimonios</h2>
                 <div class="testimonials">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"Carlos transformó completamente nuestra presencia digital. Su expertise en desarrollo web y SEO aumentó nuestro tráfico orgánico en un 200% en solo 6 meses."</p>
+                            <p>"Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!"</p>
                             <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
+                                <i class="fas fa-user"></i>
                                 <div class="author-info">
                                     <strong>María González</strong>
                                     <p>Directora de Marketing, TechSolutions</p>
@@ -758,11 +888,9 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"El sistema de gestión que desarrolló Carlos ha optimizado nuestros procesos internos, ahorrándonos más de 20 horas de trabajo manual cada semana."</p>
+                            <p>"El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos."</p>
                             <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user"></i>
-                                </div>
+                                <i class="fas fa-user"></i>
                                 <div class="author-info">
                                     <strong>Javier Rodríguez</strong>
                                     <p>Gerente de Operaciones, LogiTech</p>
@@ -773,80 +901,84 @@
                 </div>
             </section>
             
-            <section class="services">
+            <section class="services" data-section="services">
                 <h2><i class="fas fa-concierge-bell"></i> Servicios Ofrecidos</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3><i class="fas fa-laptop"></i> Creación de Páginas Web</h3>
-                        <p>Diseños únicos y profesionales, optimizados para motores de búsqueda (SEO) y perfectamente adaptados a móviles y tablets.</p>
+                        <h3><i class="fas fa-laptop"></i> Desarrollo Web Moderno</h3>
+                        <p>Páginas web rápidas, responsivas y optimizadas para SEO, con arquitectura scalable y experiencias de usuario premium.</p>
                     </div>
                     
                     <div class="service-card">
-                        <h3><i class="fas fa-mobile-alt"></i> Desarrollo de Aplicaciones Web</h3>
-                        <p>Creamos software a medida para gestionar inventario, citas, reservas, o cualquier necesidad específica de tu empresa.</p>
+                        <h3><i class="fas fa-mobile-alt"></i> Aplicaciones Web a Medida</h3>
+                        <p>Software personalizado para gestión empresarial: CRM, ERP, sistemas de reservas, inventarios o flujos de trabajo automatizados.</p>
                     </div>
                     
                     <div class="service-card">
-                        <h3><i class="fas fa-server"></i> Hosting de Alto Rendimiento</h3>
-                        <p>Tu sitio web estará alojado en servidores robustos con máxima seguridad, velocidad y disponibilidad. Backups automáticos incluidos.</p>
+                        <h3><i class="fas fa-server"></i> Hosting y DevOps</h3>
+                        <p>Alojamiento seguro en la nube (AWS/GCP), contenerización con Docker, CI/CD y monitoreo 24/7. Garantía de uptime del 99.9%.</p>
                     </div>
                     
                     <div class="service-card">
-                        <h3><i class="fas fa-desktop"></i> Alquiler de Sitios Web</h3>
-                        <p>La solución perfecta para quien necesita una web profesional inmediata, sin una gran inversión inicial.</p>
+                        <h3><i class="fas fa-desktop"></i> Soluciones de Alquiler Digital</h3>
+                        <p>Obtén una web profesional lista para usar en 7 días, sin inversión inicial. Incluye hosting, dominio y soporte técnico mensual.</p>
                     </div>
                     
                     <div class="service-card">
-                        <h3><i class="fas fa-robot"></i> Soluciones de IA y Big Data</h3>
-                        <p>Desarrollo de sistemas inteligentes para análisis de datos, automatización y toma de decisiones empresariales.</p>
+                        <h3><i class="fas fa-robot"></i> IA y Automatización Empresarial</h3>
+                        <p>Implemento modelos de Machine Learning para predicción, clasificación y automatización de procesos repetitivos.</p>
                     </div>
                     
                     <div class="service-card">
-                        <h3><i class="fas fa-chart-line"></i> Optimización y SEO</h3>
-                        <p>Mejora del posicionamiento en buscadores, velocidad y experiencia de usuario para maximizar conversiones.</p>
+                        <h3><i class="fas fa-chart-line"></i> Optimización SEO y UX</h3>
+                        <p>Mejoro el posicionamiento orgánico, velocidad de carga y experiencia de usuario para maximizar conversiones y retención.</p>
                     </div>
                 </div>
             </section>
             
-            <section class="certifications">
+            <section class="certifications" data-section="certifications">
                 <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
                 <div class="certifications">
                     <div class="cert-card">
-                        <h3>React Developer Certification</h3>
-                        <p>Meta - 2023</p>
+                        <h3>Meta Certified React Developer</h3>
+                        <p>Meta — 2023</p>
                     </div>
                     <div class="cert-card">
                         <h3>Google Cloud Professional Developer</h3>
-                        <p>Google - 2022</p>
+                        <p>Google Cloud — 2022</p>
                     </div>
                     <div class="cert-card">
-                        <h3>AWS Solutions Architect</h3>
-                        <p>Amazon Web Services - 2021</p>
+                        <h3>AWS Solutions Architect Associate</h3>
+                        <p>Amazon Web Services — 2021</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>IBM AI Foundations for Business</h3>
+                        <p>IBM via Coursera — 2022</p>
                     </div>
                 </div>
             </section>
             
-            <section class="advantages">
-                <h2><i class="fas fa-star"></i> ¿Por qué elegirnos?</h2>
+            <section class="advantages" data-section="advantages">
+                <h2><i class="fas fa-star"></i> ¿Por qué elegirme?</h2>
                 <div class="values">
                     <div class="value-card">
-                        <h3><i class="fas fa-check-circle"></i> Un único proveedor</h3>
-                        <p>Simplifica la gestión y el soporte con un proveedor integral para todas tus necesidades digitales.</p>
+                        <h3><i class="fas fa-check-circle"></i> Resultados, no solo código</h3>
+                        <p>No solo construyo software: genero valor real. Mis proyectos aumentan ventas, reducen costos y optimizan procesos.</p>
                     </div>
                     
                     <div class="value-card">
-                        <h3><i class="fas fa-user-check"></i> Expertos en experiencia de usuario</h3>
-                        <p>Creamos sitios intuitivos y agradables para tus clientes, maximizando la conversión.</p>
+                        <h3><i class="fas fa-user-check"></i> Expertise en IA y Big Data</h3>
+                        <p>Soy uno de los pocos desarrolladores en Cuba con experiencia práctica en implementar modelos de ML en entornos productivos.</p>
                     </div>
                     
                     <div class="value-card">
-                        <h3><i class="fas fa-headset"></i> Soporte técnico dedicado</h3>
-                        <p>Resolvemos tus dudas y problemas rápidamente, con un soporte personalizado y eficiente.</p>
+                        <h3><i class="fas fa-headset"></i> Soporte Continuo</h3>
+                        <p>Incluyo 3 meses de soporte técnico post-entrega y guía de uso. No te dejo solo después del lanzamiento.</p>
                     </div>
                     
                     <div class="value-card">
-                        <h3><i class="fas fa-shield-alt"></i> Transparencia total</h3>
-                        <p>Sin costes ocultos. Sabrás siempre lo que pagas y por qué, sin sorpresas desagradables.</p>
+                        <h3><i class="fas fa-shield-alt"></i> Transparencia Total</h3>
+                        <p>Sin costes ocultos. Te doy presupuestos claros, plazos reales y actualizaciones semanales. Tu proyecto es tu prioridad.</p>
                     </div>
                 </div>
             </section>
@@ -854,34 +986,43 @@
         
         <section class="cta">
             <h2><i class="fas fa-rocket"></i> ¡Convierte tu visión en digital!</h2>
-            <p>Contacta con nosotros hoy mismo para una consultoría gratuita y descubre cómo podemos llevar tu negocio al siguiente nivel.</p>
+            <p>¿Necesitas una web potente, una app empresarial o un sistema de IA? Contacta hoy para una consultoría gratuita y descubre cómo puedo llevar tu negocio al siguiente nivel.</p>
             <a href="mailto:carlosaguilardark22@gmail.com" class="btn"><i class="fas fa-envelope"></i> Contactar por Email</a>
             <a href="https://wa.me/53932292" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
             
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                <a href="https://linkedin.com/in/carlosaguilar" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/carlosaguilar" class="social-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/carlosaguilar" class="social-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://behance.net/carlosaguilar" class="social-link" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
             </div>
         </section>
     </div>
 
-    <div class="download-btn">
-        <a href="#" class="floating-btn" id="downloadBtn" title="Descargar CV en PDF">
-            <i class="fas fa-download"></i>
-        </a>
-    </div>
+    <!-- Botones flotantes -->
+    <button class="floating-btn" id="downloadBtn" title="Descargar CV en PDF">
+        <i class="fas fa-download"></i>
+    </button>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         // Animación de carga
         window.addEventListener('load', function() {
             const loadingBar = document.getElementById('loadingBar');
-            loadingBar.style.width = '100%';
-            
-            setTimeout(() => {
-                loadingBar.style.opacity = '0';
-            }, 500);
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingBar.style.opacity = '0';
+                    }, 500);
+                } else {
+                    width++;
+                    loadingBar.style.width = width + '%';
+                }
+            }, 20);
         });
 
         // Animación de scroll para las secciones
@@ -900,655 +1041,275 @@
                 observer.observe(section);
             });
 
-            // Simular descarga de PDF
-            document.getElementById('downloadBtn').addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Función de descarga de PDF habilitada. En una implementación real, esto descargaría tu CV en formato PDF.');
-                // Aquí iría la lógica real para generar/descargar el PDF
+            // === DESCARGAR PDF ===
+            document.getElementById('downloadBtn').addEventListener('click', async function() {
+                const element = document.querySelector('.container');
+                
+                // Mostrar mensaje de generación
+                const originalBtnContent = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando PDF...';
+                this.disabled = true;
+
+                try {
+                    await html2pdf()
+                        .from(element)
+                        .set({
+                            margin: [1, 1, 1, 1],
+                            filename: 'Carlos_Aguilar_CV.pdf',
+                            image: { type: 'jpeg', quality: 0.98 },
+                            html2canvas: { scale: 2, letterRendering: true, useCORS: true },
+                            jsPDF: { orientation: 'portrait', unit: 'in', format: 'a4' }
+                        })
+                        .save();
+
+                    // Restaurar botón
+                    this.innerHTML = '<i class="fas fa-download"></i>';
+                    this.disabled = false;
+                    
+                } catch (error) {
+                    alert('Hubo un error al generar el PDF. Por favor, intenta nuevamente.');
+                    this.innerHTML = '<i class="fas fa-download"></i>';
+                    this.disabled = false;
+                }
             });
+
+            // === CAMBIO DE IDIOMA ===
+            const translations = {
+                es: {
+                    title: "Carlos Aguilar",
+                    tagline: "Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables",
+                    profile: "Perfil Profesional",
+                    stats: "Estadísticas",
+                    skills: "Habilidades Técnicas",
+                    projects: "Proyectos Destacados",
+                    testimonials: "Testimonios",
+                    services: "Servicios Ofrecidos",
+                    certifications: "Certificaciones",
+                    advantages: "¿Por qué elegirme?",
+                    ctaTitle: "¡Convierte tu visión en digital!",
+                    ctaText: "¿Necesitas una web potente, una app empresarial o un sistema de IA? Contacta hoy para una consultoría gratuita y descubre cómo puedo llevar tu negocio al siguiente nivel.",
+                    contactEmail: "carlosaguilardark22@gmail.com",
+                    contactWeb: "https://charlys-store.com",
+                    contactPhone: "+53 53932292",
+                    btnEmail: "Contactar por Email",
+                    btnWhatsApp: "Contactar por WhatsApp",
+                    downloadBtn: "Descargar CV en PDF",
+                    stat1: "50+",
+                    stat2: "98%",
+                    stat3: "5+",
+                    stat4: "25+",
+                    label1: "Proyectos Entregados",
+                    label2: "Tasa de Satisfacción",
+                    label3: "Años de Experiencia",
+                    label4: "Tecnologías Dominadas",
+                    // Servicios
+                    service1: "Desarrollo Web Moderno",
+                    service2: "Aplicaciones Web a Medida",
+                    service3: "Hosting y DevOps",
+                    service4: "Soluciones de Alquiler Digital",
+                    service5: "IA y Automatización Empresarial",
+                    service6: "Optimización SEO y UX",
+                    // Certificaciones
+                    cert1: "Meta Certified React Developer",
+                    cert2: "Google Cloud Professional Developer",
+                    cert3: "AWS Solutions Architect Associate",
+                    cert4: "IBM AI Foundations for Business",
+                    // Testimonios
+                    testimonial1: "Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!",
+                    testimonial2: "El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos.",
+                    author1: "María González, Directora de Marketing, TechSolutions",
+                    author2: "Javier Rodríguez, Gerente de Operaciones, LogiTech",
+                    // Botones y textos
+                    switchLang: "EN",
+                    switchTheme: "Modo Oscuro"
+                },
+                en: {
+                    title: "Carlos Aguilar",
+                    tagline: "Full Stack Developer & AI & Big Data Specialist | Turning ideas into scalable technological solutions",
+                    profile: "Professional Profile",
+                    stats: "Statistics",
+                    skills: "Technical Skills",
+                    projects: "Featured Projects",
+                    testimonials: "Testimonials",
+                    services: "Services Offered",
+                    certifications: "Certifications",
+                    advantages: "Why Choose Me?",
+                    ctaTitle: "Turn Your Vision Into Digital!",
+                    ctaText: "Need a powerful website, a custom business app, or an AI system? Contact me today for a free consultation and discover how I can take your business to the next level.",
+                    contactEmail: "carlosaguilardark22@gmail.com",
+                    contactWeb: "https://charlys-store.com",
+                    contactPhone: "+53 53932292",
+                    btnEmail: "Contact by Email",
+                    btnWhatsApp: "Contact by WhatsApp",
+                    downloadBtn: "Download CV as PDF",
+                    stat1: "50+",
+                    stat2: "98%",
+                    stat3: "5+",
+                    stat4: "25+",
+                    label1: "Projects Delivered",
+                    label2: "Client Satisfaction Rate",
+                    label3: "Years of Experience",
+                    label4: "Technologies Mastered",
+                    // Services
+                    service1: "Modern Web Development",
+                    service2: "Custom Web Applications",
+                    service3: "Hosting & DevOps",
+                    service4: "Digital Rental Solutions",
+                    service5: "AI & Business Automation",
+                    service6: "SEO & UX Optimization",
+                    // Certifications
+                    cert1: "Meta Certified React Developer",
+                    cert2: "Google Cloud Professional Developer",
+                    cert3: "AWS Solutions Architect Associate",
+                    cert4: "IBM AI Foundations for Business",
+                    // Testimonials
+                    testimonial1: "Carlos designed and developed our e-commerce platform from scratch. His ability to integrate AI into the user experience increased our conversions by 200%. Absolute professionalism!",
+                    testimonial2: "The predictive analytics system Carlos implemented reduced our inventory costs by 37% and improved sales forecasting accuracy. A true data expert.",
+                    author1: "María González, Marketing Director, TechSolutions",
+                    author2: "Javier Rodríguez, Operations Manager, LogiTech",
+                    // Buttons and UI
+                    switchLang: "ES",
+                    switchTheme: "Dark Mode"
+                }
+            };
+
+            let currentLang = 'es';
+
+            function translatePage(lang) {
+                const t = translations[lang];
+                document.querySelector('h1').textContent = t.title;
+                document.querySelector('.tagline').textContent = t.tagline;
+                document.querySelector('[data-section="profile"] h2').textContent = t.profile;
+                document.querySelector('[data-section="stats"] h2').textContent = t.stats;
+                document.querySelector('[data-section="skills"] h2').textContent = t.skills;
+                document.querySelector('[data-section="projects"] h2').textContent = t.projects;
+                document.querySelector('[data-section="testimonials"] h2').textContent = t.testimonials;
+                document.querySelector('[data-section="services"] h2').textContent = t.services;
+                document.querySelector('[data-section="certifications"] h2').textContent = t.certifications;
+                document.querySelector('[data-section="advantages"] h2').textContent = t.advantages;
+                document.querySelector('.cta h2').textContent = t.ctaTitle;
+                document.querySelector('.cta p').textContent = t.ctaText;
+                document.querySelector('.contact-item:nth-child(1) span').textContent = t.contactEmail;
+                document.querySelector('.contact-item:nth-child(2) span').textContent = t.contactWeb;
+                document.querySelector('.contact-item:nth-child(3) span').textContent = t.contactPhone;
+                document.querySelector('.btn:nth-child(1)').textContent = t.btnEmail;
+                document.querySelector('.btn:nth-child(2)').textContent = t.btnWhatsApp;
+                document.getElementById('downloadBtn').title = t.downloadBtn;
+                
+                // Stats
+                document.querySelectorAll('.stat-label')[0].textContent = t.label1;
+                document.querySelectorAll('.stat-label')[1].textContent = t.label2;
+                document.querySelectorAll('.stat-label')[2].textContent = t.label3;
+                document.querySelectorAll('.stat-label')[3].textContent = t.label4;
+
+                // Services
+                document.querySelectorAll('.service-card h3')[0].textContent = t.service1;
+                document.querySelectorAll('.service-card h3')[1].textContent = t.service2;
+                document.querySelectorAll('.service-card h3')[2].textContent = t.service3;
+                document.querySelectorAll('.service-card h3')[3].textContent = t.service4;
+                document.querySelectorAll('.service-card h3')[4].textContent = t.service5;
+                document.querySelectorAll('.service-card h3')[5].textContent = t.service6;
+
+                // Certifications
+                document.querySelectorAll('.cert-card h3')[0].textContent = t.cert1;
+                document.querySelectorAll('.cert-card h3')[1].textContent = t.cert2;
+                document.querySelectorAll('.cert-card h3')[2].textContent = t.cert3;
+                document.querySelectorAll('.cert-card h3')[3].textContent = t.cert4;
+
+                // Testimonials
+                document.querySelectorAll('.testimonial-content p')[0].textContent = t.testimonial1;
+                document.querySelectorAll('.testimonial-content p')[1].textContent = t.testimonial2;
+                document.querySelectorAll('.testimonial-author strong')[0].textContent = t.author1.split(',')[0];
+                document.querySelectorAll('.testimonial-author p')[0].textContent = t.author1.split(',')[1].trim();
+                document.querySelectorAll('.testimonial-author strong')[1].textContent = t.author2.split(',')[0];
+                document.querySelectorAll('.testimonial-author p')[1].textContent = t.author2.split(',')[1].trim();
+            }
+
+            // Añadir botón de cambio de idioma
+            const langToggle = document.createElement('button');
+            langToggle.className = 'floating-btn theme-toggle';
+            langToggle.id = 'langToggle';
+            langToggle.title = 'Cambiar idioma';
+            langToggle.innerHTML = `<i class="fas fa-language"></i>`;
+            langToggle.style.bottom = '80px';
+            langToggle.style.right = '20px';
+            langToggle.style.zIndex = '100';
+            langToggle.onclick = () => {
+                currentLang = currentLang === 'es' ? 'en' : 'es';
+                translatePage(currentLang);
+                langToggle.innerHTML = `<i class="fas fa-language"></i> ${translations[currentLang].switchLang}`;
+            };
+            document.body.appendChild(langToggle);
+
+            // Traducir inicialmente
+            translatePage(currentLang);
+
+            // === CAMBIO DE TEMA (OSCURO/CLARO) ===
+            let isDarkMode = false;
+
+            const themeToggle = document.createElement('button');
+            themeToggle.className = 'floating-btn theme-toggle';
+            themeToggle.id = 'themeToggle';
+            themeToggle.title = 'Cambiar modo';
+            themeToggle.innerHTML = `<i class="fas fa-moon"></i>`;
+            themeToggle.style.bottom = '140px';
+            themeToggle.style.right = '20px';
+            themeToggle.style.zIndex = '100';
+            themeToggle.onclick = () => {
+                isDarkMode = !isDarkMode;
+                document.body.classList.toggle('dark-mode', isDarkMode);
+                document.querySelector('.container').classList.toggle('dark-mode', isDarkMode);
+                document.querySelector('header').classList.toggle('dark-mode', isDarkMode);
+                document.querySelector('.cta').classList.toggle('dark-mode', isDarkMode);
+
+                // Cambiar icono
+                themeToggle.innerHTML = isDarkMode 
+                    ? `<i class="fas fa-sun"></i>` 
+                    : `<i class="fas fa-moon"></i>`;
+                
+                // Cambiar colores CSS dinámicos
+                if (isDarkMode) {
+                    document.documentElement.style.setProperty('--primary', '#1e293b');
+                    document.documentElement.style.setProperty('--secondary', '#60a5fa');
+                    document.documentElement.style.setProperty('--accent', '#f87171');
+                    document.documentElement.style.setProperty('--light', '#1e293b');
+                    document.documentElement.style.setProperty('--dark', '#e2e8f0');
+                    document.documentElement.style.setProperty('--light-gray', '#334155');
+                    document.body.style.background = 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)';
+                    document.querySelector('.header-content').style.color = '#e2e8f0';
+                    document.querySelector('.content').style.color = '#e2e8f0';
+                } else {
+                    document.documentElement.style.setProperty('--primary', '#2c3e50');
+                    document.documentElement.style.setProperty('--secondary', '#3498db');
+                    document.documentElement.style.setProperty('--accent', '#e74c3c');
+                    document.documentElement.style.setProperty('--light', '#ecf0f1');
+                    document.documentElement.style.setProperty('--dark', '#2c3e50');
+                    document.documentElement.style.setProperty('--light-gray', '#f5f5f5');
+                    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+                    document.querySelector('.header-content').style.color = 'white';
+                    document.querySelector('.content').style.color = '#333';
+                }
+            };
+            document.body.appendChild(themeToggle);
+
+            // Guardar preferencia en localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                isDarkMode = true;
+                themeToggle.click();
+            }
+
+            // Guardar cambios en localStorage
+            themeToggle.addEventListener('click', () => {
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            });
+
+            // Añadir atributos de sección para traducción
+            document.querySelectorAll('section').forEach(section => {
+                section.setAttribute('data-section', section.className.split(' ')[0]);
+            });
+
         });
     </script>
-</body>
-                                                                                                                                                                                </html>            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            margin: 0 auto 20px;
-            background: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .profile-img i {
-            font-size: 80px;
-            color: var(--gray);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .tagline {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-        
-        .contact-item i {
-            color: var(--secondary);
-            background: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        section {
-            margin-bottom: 40px;
-        }
-        
-        h2 {
-            color: var(--primary);
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.8rem;
-        }
-        
-        h2 i {
-            color: var(--secondary);
-            background: var(--light);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        h3 i {
-            color: var(--secondary);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            background: var(--light-gray);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px dashed #e0e0e0;
-        }
-        
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .skill-list li span {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skill-list li i {
-            color: var(--secondary);
-            width: 25px;
-        }
-        
-        .skill-level {
-            display: inline-block;
-            height: 8px;
-            border-radius: 4px;
-            background: #e0e0e0;
-            width: 100px;
-            overflow: hidden;
-            margin-left: 10px;
-        }
-        
-        .skill-level-bar {
-            height: 100%;
-            background: var(--secondary);
-            border-radius: 4px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .service-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-            border-color: var(--secondary);
-        }
-        
-        .values {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-        
-        .value-card {
-            flex: 1;
-            min-width: 250px;
-            background: var(--light);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .project-img {
-            height: 180px;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        
-        .project-tag {
-            background: var(--light);
-            color: var(--dark);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .cert-card {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            border-left: 5px solid var(--secondary);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .cta {
-            text-align: center;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            padding: 50px 40px;
-            border-radius: 10px;
-        }
-        
-        .cta h2 {
-            color: white;
-            border-bottom: none;
-            justify-content: center;
-        }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 25px;
-            font-size: 1.2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: white;
-            color: var(--secondary);
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--secondary);
-        }
-        
-        .badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-left: 8px;
-            font-weight: 500;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .contact-item {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .services-grid, .projects, .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .content {
-                padding: 25px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <div class="profile-img">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h1>Carlos Aguilar</h1>
-                <p class="tagline">Desarrollador Full Stack & Especialista en Soluciones Digitales</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>carlosaguilardark22@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <span>https://charlys-store.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+53 53932292</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <div class="content">
-            <section class="profile">
-                <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
-                <p>Desarrollador full stack con más de 5 años de experiencia creando soluciones digitales personalizadas, optimizadas y visualmente atractivas. Especializado en el desarrollo de aplicaciones web modernas, inteligencia artificial y big data. Comprometido con la excelencia técnica, la experiencia del usuario y la satisfacción del cliente. Mi objetivo es transformar ideas en productos digitales funcionales y escalables.</p>
-            </section>
-            
-            <section class="skills">
-                <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fab fa-react"></i> Frontend</h3>
-                        <ul class="skill-list">
-                            <li><span><i class="fab fa-html5"></i> HTML5</span><div class="skill-level"><div class="skill-level-bar" style="width: 95%"></div></div></li>
-                            <li><span><i class="fab fa-css3-alt"></i> CSS3</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fab fa-js"></i> JavaScript</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fab fa-react"></i> React</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fab fa-angular"></i> Angular</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-rocket"></i> Astro</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-cube"></i> Quasar</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend</h3>
-                        <ul class="skill-list">
-                            <li><span><i class="fab fa-node-js"></i> Node.js</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fab fa-php"></i> PHP <span class="badge">Laravel</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fab fa-python"></i> Python <span class="badge">Django</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fab fa-java"></i> Java</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-cogs"></i> Odoo</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-code"></i> APIs RESTful</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-database"></i> Bases de Datos</h3>
-                        <ul class="skill-list">
-                            <li><span><i class="fas fa-database"></i> SQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> PostgreSQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> MySQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
-                            <li><span><i class="fas fa-database"></i> MongoDB</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-chart-bar"></i> Big Data Solutions</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
-                        <ul class="skill-list">
-                            <li><span><i class="fas fa-robot"></i> Machine Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
-                            <li><span><i class="fas fa-brain"></i> Deep Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
-                            <li><span><i class="fas fa-language"></i> Procesamiento NLP</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                            <li><span><i class="fas fa-eye"></i> Computer Vision</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
-                            <li><span><i class="fas fa-project-diagram"></i> TensorFlow/PyTorch</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="projects">
-                <h2><i class="fas fa-briefcase"></i> Proyectos Destacados</h2>
-                <div class="projects">
-                    <div class="project-card">
-                        <div class="project-img">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>E-commerce Platform</h3>
-                            <p>Plataforma de comercio electrónico desarrollada con React, Node.js y MongoDB. Incluye panel de administración, pasarela de pago y sistema de recomendaciones.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-img">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>Sistema de Análisis de Datos</h3>
-                            <p>Sistema de big data para análisis predictivo de ventas utilizando Python, TensorFlow y PostgreSQL. Procesa millones de registros para generar insights empresariales.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">TensorFlow</span>
-                                <span class="project-tag">PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-img">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>App de Gestión de Tareas</h3>
-                            <p>Aplicación web progresiva para gestión de proyectos desarrollada con Angular y Laravel. Incluye funciones colaborativas en tiempo real y reporting avanzado.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Angular</span>
-                                <span class="project-tag">Laravel</span>
-                                <span class="project-tag">PWA</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="services">
-                <h2><i class="fas fa-concierge-bell"></i> Servicios Ofrecidos</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3><i class="fas fa-laptop"></i> Creación de Páginas Web</h3>
-                        <p>Diseños únicos y profesionales, optimizados para motores de búsqueda (SEO) y perfectamente adaptados a móviles y tablets.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3><i class="fas fa-mobile-alt"></i> Desarrollo de Aplicaciones Web</h3>
-                        <p>Creamos software a medida para gestionar inventario, citas, reservas, o cualquier necesidad específica de tu empresa.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3><i class="fas fa-server"></i> Hosting de Alto Rendimiento</h3>
-                        <p>Tu sitio web estará alojado en servidores robustos con máxima seguridad, velocidad y disponibilidad. Backups automáticos incluidos.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3><i class="fas fa-desktop"></i> Alquiler de Sitios Web</h3>
-                        <p>La solución perfecta para quien necesita una web profesional inmediata, sin una gran inversión inicial.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3><i class="fas fa-robot"></i> Soluciones de IA y Big Data</h3>
-                        <p>Desarrollo de sistemas inteligentes para análisis de datos, automatización y toma de decisiones empresariales.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3><i class="fas fa-chart-line"></i> Optimización y SEO</h3>
-                        <p>Mejora del posicionamiento en buscadores, velocidad y experiencia de usuario para maximizar conversiones.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="certifications">
-                <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
-                <div class="certifications">
-                    <div class="cert-card">
-                        <h3>React Developer Certification</h3>
-                        <p>Meta - 2023</p>
-                    </div>
-                    <div class="cert-card">
-                        <h3>Google Cloud Professional Developer</h3>
-                        <p>Google - 2022</p>
-                    </div>
-                    <div class="cert-card">
-                        <h3>AWS Solutions Architect</h3>
-                        <p>Amazon Web Services - 2021</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="advantages">
-                <h2><i class="fas fa-star"></i> ¿Por qué elegirnos?</h2>
-                <div class="values">
-                    <div class="value-card">
-                        <h3><i class="fas fa-check-circle"></i> Un único proveedor</h3>
-                        <p>Simplifica la gestión y el soporte con un proveedor integral para todas tus necesidades digitales.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <h3><i class="fas fa-user-check"></i> Expertos en experiencia de usuario</h3>
-                        <p>Creamos sitios intuitivos y agradables para tus clientes, maximizando la conversión.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <h3><i class="fas fa-headset"></i> Soporte técnico dedicado</h3>
-                        <p>Resolvemos tus dudas y problemas rápidamente, con un soporte personalizado y eficiente.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <h3><i class="fas fa-shield-alt"></i> Transparencia total</h3>
-                        <p>Sin costes ocultos. Sabrás siempre lo que pagas y por qué, sin sorpresas desagradables.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <section class="cta">
-            <h2><i class="fas fa-rocket"></i> ¡Convierte tu visión en digital!</h2>
-            <p>Contacta con nosotros hoy mismo para una consultoría gratuita y descubre cómo podemos llevar tu negocio al siguiente nivel.</p>
-            <a href="mailto:carlosaguilardark22@gmail.com" class="btn"><i class="fas fa-envelope"></i> Contactar por Email</a>
-            <a href="https://wa.me/53932292" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
-            
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-            </div>
-        </section>
-    </div>
 </body>
 </html>
