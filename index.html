@@ -8,7 +8,6 @@
     <meta name="keywords" content="desarrollador full stack, react, node.js, python, inteligencia artificial, big data, machine learning, desarrollo web, seo, aplicaciones empresariales, django, tensorflow, postgresql, mongodb">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        /* [MANTEN LA MISMA ESTILO QUE YA TIENES — NO LO CAMBIES] */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -82,10 +81,11 @@
         .profile-img:hover {
             transform: scale(1.05);
         }
-        .profile-img i,
         .profile-img img {
-            font-size: 80px;
-            color: var(--gray);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
         h1 {
             font-size: 2.8rem;
@@ -339,7 +339,7 @@
             position: relative;
         }
         .testimonial-card:before {
-            content: """;
+            content: '"';
             position: absolute;
             top: 10px;
             left: 10px;
@@ -487,7 +487,13 @@
         }
         .theme-toggle {
             position: fixed;
-            bottom: 80px;
+            bottom: 100px;
+            right: 20px;
+            z-index: 100;
+        }
+        .lang-toggle {
+            position: fixed;
+            bottom: 180px;
             right: 20px;
             z-index: 100;
         }
@@ -518,66 +524,77 @@
         .skill-level-bar {
             animation: progress 1.5s ease-out forwards;
         }
-        /* Modo Oscuro */
+        /* Modo Oscuro - Mejoras en contraste */
         body.dark-mode {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
-            color: #e2e8f0 !important;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #e2e8f0;
         }
         .container.dark-mode {
-            background: #1e293b !important;
-            color: #e2e8f0 !important;
-        }
-        .header-content.dark-mode {
-            color: #e2e8f0 !important;
-        }
-        .content.dark-mode {
-            color: #e2e8f0 !important;
+            background: #1e293b;
+            color: #e2e8f0;
         }
         header.dark-mode {
-            background: linear-gradient(to right, #1e293b, #334155) !important;
+            background: linear-gradient(to right, #1e293b, #334155);
         }
         .cta.dark-mode {
-            background: linear-gradient(to right, #1e293b, #334155) !important;
-            color: #e2e8f0 !important;
+            background: linear-gradient(to right, #1e293b, #334155);
+            color: #e2e8f0;
         }
-        .skill-category.dark-mode,
-        .service-card.dark-mode,
-        .value-card.dark-mode,
-        .project-card.dark-mode,
-        .testimonial-card.dark-mode,
-        .cert-card.dark-mode,
-        .stat-card.dark-mode {
-            background: #334155 !important;
-            border-color: #475569 !important;
-            color: #e2e8f0 !important;
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode p, .dark-mode span, .dark-mode .stat-label, .dark-mode .project-tag {
+            color: #e2e8f0 !important; /* Alto contraste para textos */
         }
-        .skill-level-bar,
-        .progress-bar {
-            background: #60a5fa !important;
+        .dark-mode h2 {
+            border-bottom-color: #60a5fa;
         }
-        .social-link.dark-mode {
-            background: #334155 !important;
-            color: #60a5fa !important;
+        .dark-mode .skill-category, .dark-mode .service-card, .dark-mode .value-card, .dark-mode .project-card, .dark-mode .testimonial-card, .dark-mode .cert-card, .dark-mode .stat-card {
+            background: #334155;
+            border-color: #475569;
+            color: #e2e8f0;
         }
-        .floating-btn.dark-mode {
-            background: #334155 !important;
-            color: #60a5fa !important;
+        .dark-mode .skill-level {
+            background: #475569;
         }
-        .btn-outline.dark-mode {
-            border-color: #60a5fa !important;
-            color: #60a5fa !important;
+        .dark-mode .skill-level-bar {
+            background: #60a5fa;
         }
-        .btn-outline.dark-mode:hover {
-            background: #60a5fa !important;
-            color: #1e293b !important;
+        .dark-mode .project-tag {
+            background: #475569;
+            color: #e2e8f0;
         }
-        .btn.dark-mode {
-            background: #60a5fa !important;
-            color: #1e293b !important;
+        .dark-mode .social-link {
+            background: #334155;
+            color: #60a5fa;
         }
-        .btn.dark-mode:hover {
-            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3) !important;
+        .dark-mode .floating-btn {
+            background: #334155;
+            color: #60a5fa;
         }
+        .dark-mode .btn-outline {
+            border-color: #60a5fa;
+            color: #60a5fa;
+        }
+        .dark-mode .btn-outline:hover {
+            background: #60a5fa;
+            color: #1e293b;
+        }
+        .dark-mode .btn {
+            background: #60a5fa;
+            color: #1e293b;
+        }
+        .dark-mode .btn:hover {
+            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+        }
+        .dark-mode .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .contact-item i {
+            background: #334155;
+            color: #60a5fa;
+        }
+        .dark-mode .testimonial-card:before {
+            color: #475569;
+        }
+
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
@@ -603,12 +620,22 @@
             .cta h2 {
                 font-size: 1.8rem;
             }
-            .download-btn, .theme-toggle {
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+            .download-btn {
                 bottom: 10px;
                 right: 10px;
             }
             .theme-toggle {
-                bottom: 80px;
+                bottom: 70px;
+                right: 10px;
+            }
+            .lang-toggle {
+                bottom: 130px;
+                right: 10px;
             }
         }
     </style>
@@ -619,7 +646,9 @@
         <header>
             <div class="header-content">
                 <!-- Foto personal (reemplaza la URL si tienes una) -->
-                <img src="https://charlys-store.com/foto.jpg" alt="Carlos Aguilar" style="width: 160px; height: 160px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); margin: 0 auto 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                <div class="profile-img">
+                    <img src="https://charlys-store.com/foto.jpg" alt="Carlos Aguilar" onerror="this.src='https://via.placeholder.com/160';">
+                </div>
                 <h1>Carlos Aguilar</h1>
                 <p class="tagline">Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables</p>
                 <div class="contact-info">
@@ -639,14 +668,12 @@
             </div>
         </header>
         <div class="content">
-            <!-- ✅ AÑADIDO data-section -->
             <section class="profile" data-section="profile">
                 <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
                 <p>Desarrollador Full Stack con más de <strong>5 años de experiencia</strong> en el diseño y construcción de soluciones digitales de alto rendimiento para empresas y startups. Especializado en <strong>React, Node.js, Python (Django/TensorFlow)</strong> y arquitecturas de <strong>Big Data</strong>. He liderado proyectos desde cero hasta producción, mejorando eficiencias operativas en un <strong>40%+</strong> y aumentando conversiones hasta en un <strong>200%</strong>. Apasionado por la innovación, la automatización y la mejora continua mediante tecnología.</p>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
-            <section class="stats" data-section="stats">
+            <section class="stats-section" data-section="stats">
                 <h2><i class="fas fa-chart-line"></i> Estadísticas</h2>
                 <div class="stats">
                     <div class="stat-card">
@@ -668,7 +695,6 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="skills" data-section="skills">
                 <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
                 <div class="skills-grid">
@@ -718,10 +744,9 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="projects" data-section="projects">
                 <h2><i class="fas fa-briefcase"></i> Proyectos Destacados</h2>
-                <div class="projects">
+                <div class="projects-container">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-shopping-cart"></i>
@@ -770,10 +795,9 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="testimonials" data-section="testimonials">
                 <h2><i class="fas fa-comments"></i> Testimonios</h2>
-                <div class="testimonials">
+                <div class="testimonials-container">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
                             <p>"Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!"</p>
@@ -801,7 +825,6 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="services" data-section="services">
                 <h2><i class="fas fa-concierge-bell"></i> Servicios Ofrecidos</h2>
                 <div class="services-grid">
@@ -832,10 +855,9 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="certifications" data-section="certifications">
                 <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
-                <div class="certifications">
+                <div class="certifications-container">
                     <div class="cert-card">
                         <h3>Meta Certified React Developer</h3>
                         <p>Meta — 2023</p>
@@ -855,7 +877,6 @@
                 </div>
             </section>
 
-            <!-- ✅ AÑADIDO data-section -->
             <section class="advantages" data-section="advantages">
                 <h2><i class="fas fa-star"></i> ¿Por qué elegirme?</h2>
                 <div class="values">
@@ -891,11 +912,6 @@
             </div>
         </section>
     </div>
-
-    <!-- Botones flotantes -->
-    <button class="floating-btn" id="downloadBtn" title="Descargar CV en PDF">
-        <i class="fas fa-download"></i>
-    </button>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -933,15 +949,19 @@
             });
 
             // === DESCARGAR PDF ===
-            document.getElementById('downloadBtn').addEventListener('click', async function() {
-                const element = document.querySelector('.container');
-                const originalBtnContent = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando PDF...';
+            const downloadBtn = document.createElement('button');
+            downloadBtn.className = 'floating-btn download-btn';
+            downloadBtn.id = 'downloadBtn';
+            downloadBtn.title = 'Descargar CV en PDF';
+            downloadBtn.innerHTML = '<i class="fas fa-download"></i>';
+            downloadBtn.ariaLabel = 'Descargar CV';
+            downloadBtn.addEventListener('click', async function() {
+                const originalContent = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
                 this.disabled = true;
-
                 try {
                     await html2pdf()
-                        .from(element)
+                        .from(document.querySelector('.container'))
                         .set({
                             margin: [1, 1, 1, 1],
                             filename: 'Carlos_Aguilar_CV.pdf',
@@ -950,172 +970,325 @@
                             jsPDF: { orientation: 'portrait', unit: 'in', format: 'a4' }
                         })
                         .save();
-                    this.innerHTML = '<i class="fas fa-download"></i>';
-                    this.disabled = false;
                 } catch (error) {
-                    alert('Hubo un error al generar el PDF. Por favor, intenta nuevamente.');
-                    this.innerHTML = '<i class="fas fa-download"></i>';
+                    console.error(error);
+                    alert('Error al generar PDF. Intenta de nuevo.');
+                } finally {
+                    this.innerHTML = originalContent;
                     this.disabled = false;
                 }
             });
+            document.body.appendChild(downloadBtn);
 
             // === CAMBIO DE IDIOMA ===
             const translations = {
                 es: {
-                    title: "Carlos Aguilar",
-                    tagline: "Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables",
-                    profile: "Perfil Profesional",
-                    stats: "Estadísticas",
-                    skills: "Habilidades Técnicas",
-                    projects: "Proyectos Destacados",
-                    testimonials: "Testimonios",
-                    services: "Servicios Ofrecidos",
-                    certifications: "Certificaciones",
-                    advantages: "¿Por qué elegirme?",
-                    ctaTitle: "¡Convierte tu visión en digital!",
-                    ctaText: "¿Necesitas una web potente, una app empresarial o un sistema de IA? Contacta hoy para una consultoría gratuita y descubre cómo puedo llevar tu negocio al siguiente nivel.",
-                    contactEmail: "carlosaguilardark22@gmail.com",
-                    contactWeb: "https://charlys-store.com",
-                    contactPhone: "+53 53932292",
-                    btnEmail: "Contactar por Email",
-                    btnWhatsApp: "Contactar por WhatsApp",
-                    downloadBtn: "Descargar CV en PDF",
-                    stat1: "50+",
-                    stat2: "98%",
-                    stat3: "5+",
-                    stat4: "25+",
-                    label1: "Proyectos Entregados",
-                    label2: "Tasa de Satisfacción",
-                    label3: "Años de Experiencia",
-                    label4: "Tecnologías Dominadas",
-                    service1: "Desarrollo Web Moderno",
-                    service2: "Aplicaciones Web a Medida",
-                    service3: "Hosting y DevOps",
-                    service4: "Soluciones de Alquiler Digital",
-                    service5: "IA y Automatización Empresarial",
-                    service6: "Optimización SEO y UX",
-                    cert1: "Meta Certified React Developer",
-                    cert2: "Google Cloud Professional Developer",
-                    cert3: "AWS Solutions Architect Associate",
-                    cert4: "IBM AI Foundations for Business",
-                    testimonial1: "Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!",
-                    testimonial2: "El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos.",
-                    author1: "María González, Directora de Marketing, TechSolutions",
-                    author2: "Javier Rodríguez, Gerente de Operaciones, LogiTech",
-                    switchLang: "EN",
-                    switchTheme: "Modo Oscuro"
+                    title: 'Carlos Aguilar',
+                    tagline: 'Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables',
+                    profileTitle: '<i class="fas fa-user"></i> Perfil Profesional',
+                    profileDesc: 'Desarrollador Full Stack con más de <strong>5 años de experiencia</strong> en el diseño y construcción de soluciones digitales de alto rendimiento para empresas y startups. Especializado en <strong>React, Node.js, Python (Django/TensorFlow)</strong> y arquitecturas de <strong>Big Data</strong>. He liderado proyectos desde cero hasta producción, mejorando eficiencias operativas en un <strong>40%+</strong> y aumentando conversiones hasta en un <strong>200%</strong>. Apasionado por la innovación, la automatización y la mejora continua mediante tecnología.',
+                    statsTitle: '<i class="fas fa-chart-line"></i> Estadísticas',
+                    labelProjects: 'Proyectos Entregados',
+                    labelSatisfaction: 'Tasa de Satisfacción',
+                    labelExperience: 'Años de Experiencia',
+                    labelTechnologies: 'Tecnologías Dominadas',
+                    skillsTitle: '<i class="fas fa-laptop-code"></i> Habilidades Técnicas',
+                    frontendTitle: '<i class="fab fa-react"></i> Frontend',
+                    frontendHTML: '<i class="fab fa-html5"></i> HTML5',
+                    frontendCSS: '<i class="fab fa-css3-alt"></i> CSS3 / SCSS',
+                    frontendJS: '<i class="fab fa-js"></i> JavaScript / TypeScript',
+                    frontendReact: '<i class="fab fa-react"></i> React + Redux',
+                    frontendAngular: '<i class="fab fa-angular"></i> Angular',
+                    frontendAstro: '<i class="fas fa-rocket"></i> Astro.js',
+                    frontendQuasar: '<i class="fas fa-cube"></i> Quasar Framework',
+                    backendTitle: '<i class="fas fa-server"></i> Backend & APIs',
+                    backendNode: '<i class="fab fa-node-js"></i> Node.js + Express',
+                    backendPython: '<i class="fab fa-python"></i> Python + Django / Flask',
+                    backendPHP: '<i class="fab fa-php"></i> PHP + Laravel',
+                    backendJava: '<i class="fab fa-java"></i> Java (Spring Boot)',
+                    backendOdoo: '<i class="fas fa-cogs"></i> Odoo ERP',
+                    backendAPIs: '<i class="fas fa-code"></i> RESTful / GraphQL APIs',
+                    dbTitle: '<i class="fas fa-database"></i> Bases de Datos & Cloud',
+                    dbPostgres: '<i class="fas fa-database"></i> PostgreSQL / MySQL',
+                    dbMongo: '<i class="fas fa-database"></i> MongoDB / Redis',
+                    dbBigData: '<i class="fas fa-chart-bar"></i> Big Data (ETL, Pandas, Spark)',
+                    dbDocker: '<i class="fab fa-docker"></i> Docker / CI/CD',
+                    dbAWS: '<i class="fab fa-aws"></i> AWS / Google Cloud',
+                    aiTitle: '<i class="fas fa-brain"></i> Inteligencia Artificial & Machine Learning',
+                    aiML: '<i class="fas fa-robot"></i> Machine Learning (Scikit-learn)',
+                    aiDL: '<i class="fas fa-brain"></i> Deep Learning (TensorFlow, PyTorch)',
+                    aiNLP: '<i class="fas fa-language"></i> NLP & LLMs (GPT, Transformers)',
+                    aiCV: '<i class="fas fa-eye"></i> Computer Vision (OpenCV)',
+                    aiDeploy: '<i class="fas fa-project-diagram"></i> Model Deployment (Flask, FastAPI)',
+                    projectsTitle: '<i class="fas fa-briefcase"></i> Proyectos Destacados',
+                    project1Title: 'Plataforma E-commerce con Recomendaciones Inteligentes',
+                    project1Desc: 'Desarrollo integral de una tienda online con panel administrativo, pasarela de pago (Stripe), sistema de recomendaciones basado en ML y optimización SEO. Resultado: +150% ventas en 4 meses.',
+                    project2Title: 'Sistema Predictivo de Ventas para Retail',
+                    project2Desc: 'Solución de Big Data con Python y TensorFlow que analiza 2M+ registros mensuales para predecir demanda, reducir inventario muerto y optimizar logística. Ahorro estimado: $85K/año.',
+                    project3Title: 'App de Gestión de Tareas con Colaboración en Tiempo Real',
+                    project3Desc: 'Aplicación PWA desarrollada con Angular y Laravel, con notificaciones push, chat en vivo y dashboard de productividad. Usada por 500+ usuarios activos mensuales.',
+                    testimonialsTitle: '<i class="fas fa-comments"></i> Testimonios',
+                    testimonial1: '"Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!"',
+                    testimonial1Author: 'María González',
+                    testimonial1Role: 'Directora de Marketing, TechSolutions',
+                    testimonial2: '"El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos."',
+                    testimonial2Author: 'Javier Rodríguez',
+                    testimonial2Role: 'Gerente de Operaciones, LogiTech',
+                    servicesTitle: '<i class="fas fa-concierge-bell"></i> Servicios Ofrecidos',
+                    service1Title: '<i class="fas fa-laptop"></i> Desarrollo Web Moderno',
+                    service1Desc: 'Páginas web rápidas, responsivas y optimizadas para SEO, con arquitectura scalable y experiencias de usuario premium.',
+                    service2Title: '<i class="fas fa-mobile-alt"></i> Aplicaciones Web a Medida',
+                    service2Desc: 'Software personalizado para gestión empresarial: CRM, ERP, sistemas de reservas, inventarios o flujos de trabajo automatizados.',
+                    service3Title: '<i class="fas fa-server"></i> Hosting y DevOps',
+                    service3Desc: 'Alojamiento seguro en la nube (AWS/GCP), contenerización con Docker, CI/CD y monitoreo 24/7. Garantía de uptime del 99.9%.',
+                    service4Title: '<i class="fas fa-desktop"></i> Soluciones de Alquiler Digital',
+                    service4Desc: 'Obtén una web profesional lista para usar en 7 días, sin inversión inicial. Incluye hosting, dominio y soporte técnico mensual.',
+                    service5Title: '<i class="fas fa-robot"></i> IA y Automatización Empresarial',
+                    service5Desc: 'Implemento modelos de Machine Learning para predicción, clasificación y automatización de procesos repetitivos.',
+                    service6Title: '<i class="fas fa-chart-line"></i> Optimización SEO y UX',
+                    service6Desc: 'Mejoro el posicionamiento orgánico, velocidad de carga y experiencia de usuario para maximizar conversiones y retención.',
+                    certificationsTitle: '<i class="fas fa-certificate"></i> Certificaciones',
+                    cert1Title: 'Meta Certified React Developer',
+                    cert1Desc: 'Meta — 2023',
+                    cert2Title: 'Google Cloud Professional Developer',
+                    cert2Desc: 'Google Cloud — 2022',
+                    cert3Title: 'AWS Solutions Architect Associate',
+                    cert3Desc: 'Amazon Web Services — 2021',
+                    cert4Title: 'IBM AI Foundations for Business',
+                    cert4Desc: 'IBM via Coursera — 2022',
+                    advantagesTitle: '<i class="fas fa-star"></i> ¿Por qué elegirme?',
+                    advantage1Title: '<i class="fas fa-check-circle"></i> Resultados, no solo código',
+                    advantage1Desc: 'No solo construyo software: genero valor real. Mis proyectos aumentan ventas, reducen costos y optimizan procesos.',
+                    advantage2Title: '<i class="fas fa-user-check"></i> Expertise en IA y Big Data',
+                    advantage2Desc: 'Soy uno de los pocos desarrolladores en Cuba con experiencia práctica en implementar modelos de ML en entornos productivos.',
+                    advantage3Title: '<i class="fas fa-headset"></i> Soporte Continuo',
+                    advantage3Desc: 'Incluyo 3 meses de soporte técnico post-entrega y guía de uso. No te dejo solo después del lanzamiento.',
+                    advantage4Title: '<i class="fas fa-shield-alt"></i> Transparencia Total',
+                    advantage4Desc: 'Sin costes ocultos. Te doy presupuestos claros, plazos reales y actualizaciones semanales. Tu proyecto es tu prioridad.',
+                    ctaTitle: '<i class="fas fa-rocket"></i> ¡Convierte tu visión en digital!',
+                    ctaDesc: '¿Necesitas una web potente, una app empresarial o un sistema de IA? Contacta hoy para una consultoría gratuita y descubre cómo puedo llevar tu negocio al siguiente nivel.',
+                    btnEmail: '<i class="fas fa-envelope"></i> Contactar por Email',
+                    btnWhatsApp: '<i class="fab fa-whatsapp"></i> Contactar por WhatsApp',
+                    langToggle: 'EN',
+                    langToggleTitle: 'Cambiar a inglés',
+                    themeToggle: 'Modo Oscuro',
+                    downloadTitle: 'Descargar CV en PDF'
                 },
                 en: {
-                    title: "Carlos Aguilar",
-                    tagline: "Full Stack Developer & AI & Big Data Specialist | Turning ideas into scalable technological solutions",
-                    profile: "Professional Profile",
-                    stats: "Statistics",
-                    skills: "Technical Skills",
-                    projects: "Featured Projects",
-                    testimonials: "Testimonials",
-                    services: "Services Offered",
-                    certifications: "Certifications",
-                    advantages: "Why Choose Me?",
-                    ctaTitle: "Turn Your Vision Into Digital!",
-                    ctaText: "Need a powerful website, a custom business app, or an AI system? Contact me today for a free consultation and discover how I can take your business to the next level.",
-                    contactEmail: "carlosaguilardark22@gmail.com",
-                    contactWeb: "https://charlys-store.com",
-                    contactPhone: "+53 53932292",
-                    btnEmail: "Contact by Email",
-                    btnWhatsApp: "Contact by WhatsApp",
-                    downloadBtn: "Download CV as PDF",
-                    stat1: "50+",
-                    stat2: "98%",
-                    stat3: "5+",
-                    stat4: "25+",
-                    label1: "Projects Delivered",
-                    label2: "Client Satisfaction Rate",
-                    label3: "Years of Experience",
-                    label4: "Technologies Mastered",
-                    service1: "Modern Web Development",
-                    service2: "Custom Web Applications",
-                    service3: "Hosting & DevOps",
-                    service4: "Digital Rental Solutions",
-                    service5: "AI & Business Automation",
-                    service6: "SEO & UX Optimization",
-                    cert1: "Meta Certified React Developer",
-                    cert2: "Google Cloud Professional Developer",
-                    cert3: "AWS Solutions Architect Associate",
-                    cert4: "IBM AI Foundations for Business",
-                    testimonial1: "Carlos designed and developed our e-commerce platform from scratch. His ability to integrate AI into the user experience increased our conversions by 200%. Absolute professionalism!",
-                    testimonial2: "The predictive analytics system Carlos implemented reduced our inventory costs by 37% and improved sales forecasting accuracy. A true data expert.",
-                    author1: "María González, Marketing Director, TechSolutions",
-                    author2: "Javier Rodríguez, Operations Manager, LogiTech",
-                    switchLang: "ES",
-                    switchTheme: "Dark Mode"
+                    title: 'Carlos Aguilar',
+                    tagline: 'Full Stack Developer & AI & Big Data Specialist | Turning ideas into scalable technological solutions',
+                    profileTitle: '<i class="fas fa-user"></i> Professional Profile',
+                    profileDesc: 'Full Stack Developer with over <strong>5 years of experience</strong> in designing and building high-performance digital solutions for companies and startups. Specialized in <strong>React, Node.js, Python (Django/TensorFlow)</strong> and <strong>Big Data</strong> architectures. I have led projects from scratch to production, improving operational efficiencies by <strong>40%+</strong> and increasing conversions by up to <strong>200%</strong>. Passionate about innovation, automation, and continuous improvement through technology.',
+                    statsTitle: '<i class="fas fa-chart-line"></i> Statistics',
+                    labelProjects: 'Projects Delivered',
+                    labelSatisfaction: 'Satisfaction Rate',
+                    labelExperience: 'Years of Experience',
+                    labelTechnologies: 'Technologies Mastered',
+                    skillsTitle: '<i class="fas fa-laptop-code"></i> Technical Skills',
+                    frontendTitle: '<i class="fab fa-react"></i> Frontend',
+                    frontendHTML: '<i class="fab fa-html5"></i> HTML5',
+                    frontendCSS: '<i class="fab fa-css3-alt"></i> CSS3 / SCSS',
+                    frontendJS: '<i class="fab fa-js"></i> JavaScript / TypeScript',
+                    frontendReact: '<i class="fab fa-react"></i> React + Redux',
+                    frontendAngular: '<i class="fab fa-angular"></i> Angular',
+                    frontendAstro: '<i class="fas fa-rocket"></i> Astro.js',
+                    frontendQuasar: '<i class="fas fa-cube"></i> Quasar Framework',
+                    backendTitle: '<i class="fas fa-server"></i> Backend & APIs',
+                    backendNode: '<i class="fab fa-node-js"></i> Node.js + Express',
+                    backendPython: '<i class="fab fa-python"></i> Python + Django / Flask',
+                    backendPHP: '<i class="fab fa-php"></i> PHP + Laravel',
+                    backendJava: '<i class="fab fa-java"></i> Java (Spring Boot)',
+                    backendOdoo: '<i class="fas fa-cogs"></i> Odoo ERP',
+                    backendAPIs: '<i class="fas fa-code"></i> RESTful / GraphQL APIs',
+                    dbTitle: '<i class="fas fa-database"></i> Databases & Cloud',
+                    dbPostgres: '<i class="fas fa-database"></i> PostgreSQL / MySQL',
+                    dbMongo: '<i class="fas fa-database"></i> MongoDB / Redis',
+                    dbBigData: '<i class="fas fa-chart-bar"></i> Big Data (ETL, Pandas, Spark)',
+                    dbDocker: '<i class="fab fa-docker"></i> Docker / CI/CD',
+                    dbAWS: '<i class="fab fa-aws"></i> AWS / Google Cloud',
+                    aiTitle: '<i class="fas fa-brain"></i> Artificial Intelligence & Machine Learning',
+                    aiML: '<i class="fas fa-robot"></i> Machine Learning (Scikit-learn)',
+                    aiDL: '<i class="fas fa-brain"></i> Deep Learning (TensorFlow, PyTorch)',
+                    aiNLP: '<i class="fas fa-language"></i> NLP & LLMs (GPT, Transformers)',
+                    aiCV: '<i class="fas fa-eye"></i> Computer Vision (OpenCV)',
+                    aiDeploy: '<i class="fas fa-project-diagram"></i> Model Deployment (Flask, FastAPI)',
+                    projectsTitle: '<i class="fas fa-briefcase"></i> Featured Projects',
+                    project1Title: 'E-commerce Platform with Intelligent Recommendations',
+                    project1Desc: 'Comprehensive development of an online store with admin panel, payment gateway (Stripe), ML-based recommendation system, and SEO optimization. Result: +150% sales in 4 months.',
+                    project2Title: 'Predictive Sales System for Retail',
+                    project2Desc: 'Big Data solution with Python and TensorFlow that analyzes 2M+ monthly records to predict demand, reduce dead inventory, and optimize logistics. Estimated savings: $85K/year.',
+                    project3Title: 'Task Management App with Real-Time Collaboration',
+                    project3Desc: 'PWA application developed with Angular and Laravel, with push notifications, live chat, and productivity dashboard. Used by 500+ active monthly users.',
+                    testimonialsTitle: '<i class="fas fa-comments"></i> Testimonials',
+                    testimonial1: '"Carlos designed and developed our e-commerce platform from scratch. His ability to integrate artificial intelligence into the user experience allowed us to increase our conversions by 200%. Absolute professionalism!"',
+                    testimonial1Author: 'María González',
+                    testimonial1Role: 'Marketing Director, TechSolutions',
+                    testimonial2: '"The predictive analytics system implemented by Carlos reduced our inventory costs by 37% and improved the accuracy of our sales forecasts. A true data expert."',
+                    testimonial2Author: 'Javier Rodríguez',
+                    testimonial2Role: 'Operations Manager, LogiTech',
+                    servicesTitle: '<i class="fas fa-concierge-bell"></i> Services Offered',
+                    service1Title: '<i class="fas fa-laptop"></i> Modern Web Development',
+                    service1Desc: 'Fast, responsive, and SEO-optimized websites with scalable architecture and premium user experiences.',
+                    service2Title: '<i class="fas fa-mobile-alt"></i> Custom Web Applications',
+                    service2Desc: 'Custom software for business management: CRM, ERP, booking systems, inventories, or automated workflows.',
+                    service3Title: '<i class="fas fa-server"></i> Hosting and DevOps',
+                    service3Desc: 'Secure cloud hosting (AWS/GCP), containerization with Docker, CI/CD, and 24/7 monitoring. 99.9% uptime guarantee.',
+                    service4Title: '<i class="fas fa-desktop"></i> Digital Rental Solutions',
+                    service4Desc: 'Get a professional website ready to use in 7 days, without initial investment. Includes hosting, domain, and monthly technical support.',
+                    service5Title: '<i class="fas fa-robot"></i> AI and Business Automation',
+                    service5Desc: 'I implement Machine Learning models for prediction, classification, and automation of repetitive processes.',
+                    service6Title: '<i class="fas fa-chart-line"></i> SEO and UX Optimization',
+                    service6Desc: 'I improve organic positioning, loading speed, and user experience to maximize conversions and retention.',
+                    certificationsTitle: '<i class="fas fa-certificate"></i> Certifications',
+                    cert1Title: 'Meta Certified React Developer',
+                    cert1Desc: 'Meta — 2023',
+                    cert2Title: 'Google Cloud Professional Developer',
+                    cert2Desc: 'Google Cloud — 2022',
+                    cert3Title: 'AWS Solutions Architect Associate',
+                    cert3Desc: 'Amazon Web Services — 2021',
+                    cert4Title: 'IBM AI Foundations for Business',
+                    cert4Desc: 'IBM via Coursera — 2022',
+                    advantagesTitle: '<i class="fas fa-star"></i> Why Choose Me?',
+                    advantage1Title: '<i class="fas fa-check-circle"></i> Results, Not Just Code',
+                    advantage1Desc: 'I don\'t just build software: I generate real value. My projects increase sales, reduce costs, and optimize processes.',
+                    advantage2Title: '<i class="fas fa-user-check"></i> Expertise in AI and Big Data',
+                    advantage2Desc: 'I am one of the few developers in Cuba with practical experience implementing ML models in production environments.',
+                    advantage3Title: '<i class="fas fa-headset"></i> Continuous Support',
+                    advantage3Desc: 'I include 3 months of post-delivery technical support and usage guide. I don\'t leave you alone after launch.',
+                    advantage4Title: '<i class="fas fa-shield-alt"></i> Total Transparency',
+                    advantage4Desc: 'No hidden costs. I provide clear budgets, real deadlines, and weekly updates. Your project is your priority.',
+                    ctaTitle: '<i class="fas fa-rocket"></i> Turn Your Vision Into Digital!',
+                    ctaDesc: 'Need a powerful website, a business app, or an AI system? Contact today for a free consultation and discover how I can take your business to the next level.',
+                    btnEmail: '<i class="fas fa-envelope"></i> Contact by Email',
+                    btnWhatsApp: '<i class="fab fa-whatsapp"></i> Contact by WhatsApp',
+                    langToggle: 'ES',
+                    langToggleTitle: 'Switch to Spanish',
+                    themeToggle: 'Dark Mode',
+                    downloadTitle: 'Download CV as PDF'
                 }
             };
 
-            let currentLang = 'es';
+            let currentLang = localStorage.getItem('lang') || 'es';
 
             function translatePage(lang) {
                 const t = translations[lang];
-                document.querySelector('h1').textContent = t.title;
-                document.querySelector('.tagline').textContent = t.tagline;
-                document.querySelector('[data-section="profile"] h2').textContent = t.profile;
-                document.querySelector('[data-section="stats"] h2').textContent = t.stats;
-                document.querySelector('[data-section="skills"] h2').textContent = t.skills;
-                document.querySelector('[data-section="projects"] h2').textContent = t.projects;
-                document.querySelector('[data-section="testimonials"] h2').textContent = t.testimonials;
-                document.querySelector('[data-section="services"] h2').textContent = t.services;
-                document.querySelector('[data-section="certifications"] h2').textContent = t.certifications;
-                document.querySelector('[data-section="advantages"] h2').textContent = t.advantages;
-                document.querySelector('.cta h2').textContent = t.ctaTitle;
-                document.querySelector('.cta p').textContent = t.ctaText;
-                document.querySelector('.contact-item:nth-child(1) span').textContent = t.contactEmail;
-                document.querySelector('.contact-item:nth-child(2) span').textContent = t.contactWeb;
-                document.querySelector('.contact-item:nth-child(3) span').textContent = t.contactPhone;
-                document.querySelector('.btn:nth-child(1)').textContent = t.btnEmail;
-                document.querySelector('.btn:nth-child(2)').textContent = t.btnWhatsApp;
-                document.getElementById('downloadBtn').title = t.downloadBtn;
+                document.documentElement.lang = lang; // Cambia lang del HTML
 
-                // Actualizar etiquetas de estadísticas
-                document.querySelectorAll('.stat-label')[0].textContent = t.label1;
-                document.querySelectorAll('.stat-label')[1].textContent = t.label2;
-                document.querySelectorAll('.stat-label')[2].textContent = t.label3;
-                document.querySelectorAll('.stat-label')[3].textContent = t.label4;
+                const elements = [
+                    { selector: 'h1', html: t.title },
+                    { selector: '.tagline', html: t.tagline },
+                    { selector: '.profile h2', html: t.profileTitle },
+                    { selector: '.profile p', html: t.profileDesc },
+                    { selector: '.stats-section h2', html: t.statsTitle },
+                    { selector: '.stat-label:nth-of-type(1)', html: t.labelProjects },
+                    { selector: '.stat-label:nth-of-type(2)', html: t.labelSatisfaction },
+                    { selector: '.stat-label:nth-of-type(3)', html: t.labelExperience },
+                    { selector: '.stat-label:nth-of-type(4)', html: t.labelTechnologies },
+                    { selector: '.skills h2', html: t.skillsTitle },
+                    { selector: '.skill-category:nth-of-type(1) h3', html: t.frontendTitle },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(1) span', html: t.frontendHTML },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(2) span', html: t.frontendCSS },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(3) span', html: t.frontendJS },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(4) span', html: t.frontendReact },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(5) span', html: t.frontendAngular },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(6) span', html: t.frontendAstro },
+                    { selector: '.skill-category:nth-of-type(1) li:nth-of-type(7) span', html: t.frontendQuasar },
+                    { selector: '.skill-category:nth-of-type(2) h3', html: t.backendTitle },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(1) span', html: t.backendNode },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(2) span', html: t.backendPython },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(3) span', html: t.backendPHP },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(4) span', html: t.backendJava },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(5) span', html: t.backendOdoo },
+                    { selector: '.skill-category:nth-of-type(2) li:nth-of-type(6) span', html: t.backendAPIs },
+                    { selector: '.skill-category:nth-of-type(3) h3', html: t.dbTitle },
+                    { selector: '.skill-category:nth-of-type(3) li:nth-of-type(1) span', html: t.dbPostgres },
+                    { selector: '.skill-category:nth-of-type(3) li:nth-of-type(2) span', html: t.dbMongo },
+                    { selector: '.skill-category:nth-of-type(3) li:nth-of-type(3) span', html: t.dbBigData },
+                    { selector: '.skill-category:nth-of-type(3) li:nth-of-type(4) span', html: t.dbDocker },
+                    { selector: '.skill-category:nth-of-type(3) li:nth-of-type(5) span', html: t.dbAWS },
+                    { selector: '.skill-category:nth-of-type(4) h3', html: t.aiTitle },
+                    { selector: '.skill-category:nth-of-type(4) li:nth-of-type(1) span', html: t.aiML },
+                    { selector: '.skill-category:nth-of-type(4) li:nth-of-type(2) span', html: t.aiDL },
+                    { selector: '.skill-category:nth-of-type(4) li:nth-of-type(3) span', html: t.aiNLP },
+                    { selector: '.skill-category:nth-of-type(4) li:nth-of-type(4) span', html: t.aiCV },
+                    { selector: '.skill-category:nth-of-type(4) li:nth-of-type(5) span', html: t.aiDeploy },
+                    { selector: '.projects h2', html: t.projectsTitle },
+                    { selector: '.project-card:nth-of-type(1) h3', html: t.project1Title },
+                    { selector: '.project-card:nth-of-type(1) p', html: t.project1Desc },
+                    { selector: '.project-card:nth-of-type(2) h3', html: t.project2Title },
+                    { selector: '.project-card:nth-of-type(2) p', html: t.project2Desc },
+                    { selector: '.project-card:nth-of-type(3) h3', html: t.project3Title },
+                    { selector: '.project-card:nth-of-type(3) p', html: t.project3Desc },
+                    { selector: '.testimonials h2', html: t.testimonialsTitle },
+                    { selector: '.testimonial-card:nth-of-type(1) p', html: t.testimonial1 },
+                    { selector: '.testimonial-card:nth-of-type(1) strong', html: t.testimonial1Author },
+                    { selector: '.testimonial-card:nth-of-type(1) .author-info p', html: t.testimonial1Role },
+                    { selector: '.testimonial-card:nth-of-type(2) p', html: t.testimonial2 },
+                    { selector: '.testimonial-card:nth-of-type(2) strong', html: t.testimonial2Author },
+                    { selector: '.testimonial-card:nth-of-type(2) .author-info p', html: t.testimonial2Role },
+                    { selector: '.services h2', html: t.servicesTitle },
+                    { selector: '.service-card:nth-of-type(1) h3', html: t.service1Title },
+                    { selector: '.service-card:nth-of-type(1) p', html: t.service1Desc },
+                    { selector: '.service-card:nth-of-type(2) h3', html: t.service2Title },
+                    { selector: '.service-card:nth-of-type(2) p', html: t.service2Desc },
+                    { selector: '.service-card:nth-of-type(3) h3', html: t.service3Title },
+                    { selector: '.service-card:nth-of-type(3) p', html: t.service3Desc },
+                    { selector: '.service-card:nth-of-type(4) h3', html: t.service4Title },
+                    { selector: '.service-card:nth-of-type(4) p', html: t.service4Desc },
+                    { selector: '.service-card:nth-of-type(5) h3', html: t.service5Title },
+                    { selector: '.service-card:nth-of-type(5) p', html: t.service5Desc },
+                    { selector: '.service-card:nth-of-type(6) h3', html: t.service6Title },
+                    { selector: '.service-card:nth-of-type(6) p', html: t.service6Desc },
+                    { selector: '.certifications h2', html: t.certificationsTitle },
+                    { selector: '.cert-card:nth-of-type(1) h3', html: t.cert1Title },
+                    { selector: '.cert-card:nth-of-type(1) p', html: t.cert1Desc },
+                    { selector: '.cert-card:nth-of-type(2) h3', html: t.cert2Title },
+                    { selector: '.cert-card:nth-of-type(2) p', html: t.cert2Desc },
+                    { selector: '.cert-card:nth-of-type(3) h3', html: t.cert3Title },
+                    { selector: '.cert-card:nth-of-type(3) p', html: t.cert3Desc },
+                    { selector: '.cert-card:nth-of-type(4) h3', html: t.cert4Title },
+                    { selector: '.cert-card:nth-of-type(4) p', html: t.cert4Desc },
+                    { selector: '.advantages h2', html: t.advantagesTitle },
+                    { selector: '.value-card:nth-of-type(1) h3', html: t.advantage1Title },
+                    { selector: '.value-card:nth-of-type(1) p', html: t.advantage1Desc },
+                    { selector: '.value-card:nth-of-type(2) h3', html: t.advantage2Title },
+                    { selector: '.value-card:nth-of-type(2) p', html: t.advantage2Desc },
+                    { selector: '.value-card:nth-of-type(3) h3', html: t.advantage3Title },
+                    { selector: '.value-card:nth-of-type(3) p', html: t.advantage3Desc },
+                    { selector: '.value-card:nth-of-type(4) h3', html: t.advantage4Title },
+                    { selector: '.value-card:nth-of-type(4) p', html: t.advantage4Desc },
+                    { selector: '.cta h2', html: t.ctaTitle },
+                    { selector: '.cta p', html: t.ctaDesc },
+                    { selector: '.btn:not(.btn-outline)', html: t.btnEmail },
+                    { selector: '.btn.btn-outline', html: t.btnWhatsApp }
+                ];
 
-                // Actualizar servicios
-                document.querySelectorAll('.service-card h3')[0].textContent = t.service1;
-                document.querySelectorAll('.service-card h3')[1].textContent = t.service2;
-                document.querySelectorAll('.service-card h3')[2].textContent = t.service3;
-                document.querySelectorAll('.service-card h3')[3].textContent = t.service4;
-                document.querySelectorAll('.service-card h3')[4].textContent = t.service5;
-                document.querySelectorAll('.service-card h3')[5].textContent = t.service6;
+                elements.forEach(item => {
+                    const element = document.querySelector(item.selector);
+                    if (element) {
+                        element.innerHTML = item.html;
+                    }
+                });
 
-                // Actualizar certificaciones
-                document.querySelectorAll('.cert-card h3')[0].textContent = t.cert1;
-                document.querySelectorAll('.cert-card h3')[1].textContent = t.cert2;
-                document.querySelectorAll('.cert-card h3')[2].textContent = t.cert3;
-                document.querySelectorAll('.cert-card h3')[3].textContent = t.cert4;
+                // Actualizar botones flotantes
+                const langBtn = document.getElementById('langToggle');
+                if (langBtn) {
+                    langBtn.innerHTML = `<i class="fas fa-language"></i> ${t.langToggle}`;
+                    langBtn.title = t.langToggleTitle;
+                }
+                downloadBtn.title = t.downloadTitle;
 
-                // Actualizar testimonios
-                document.querySelectorAll('.testimonial-content p')[0].textContent = t.testimonial1;
-                document.querySelectorAll('.testimonial-content p')[1].textContent = t.testimonial2;
-                document.querySelectorAll('.testimonial-author strong')[0].textContent = t.author1.split(',')[0];
-                document.querySelectorAll('.testimonial-author p')[0].textContent = t.author1.split(',')[1].trim();
-                document.querySelectorAll('.testimonial-author strong')[1].textContent = t.author2.split(',')[0];
-                document.querySelectorAll('.testimonial-author p')[1].textContent = t.author2.split(',')[1].trim();
+                localStorage.setItem('lang', lang);
             }
 
-            // Añadir botón de cambio de idioma
+            // Botón de cambio de idioma
             const langToggle = document.createElement('button');
-            langToggle.className = 'floating-btn theme-toggle';
+            langToggle.className = 'floating-btn lang-toggle';
             langToggle.id = 'langToggle';
-            langToggle.title = 'Cambiar idioma';
-            langToggle.innerHTML = `<i class="fas fa-language"></i>`;
-            langToggle.style.bottom = '80px';
-            langToggle.style.right = '20px';
-            langToggle.style.zIndex = '100';
+            langToggle.ariaLabel = 'Cambiar idioma';
             langToggle.onclick = () => {
                 currentLang = currentLang === 'es' ? 'en' : 'es';
                 translatePage(currentLang);
-                langToggle.innerHTML = `<i class="fas fa-language"></i> ${translations[currentLang].switchLang}`;
             };
             document.body.appendChild(langToggle);
 
@@ -1123,62 +1296,26 @@
             translatePage(currentLang);
 
             // === CAMBIO DE TEMA (OSCURO/CLARO) ===
-            let isDarkMode = false;
+            let isDarkMode = localStorage.getItem('theme') === 'dark';
             const themeToggle = document.createElement('button');
             themeToggle.className = 'floating-btn theme-toggle';
             themeToggle.id = 'themeToggle';
-            themeToggle.title = 'Cambiar modo';
-            themeToggle.innerHTML = `<i class="fas fa-moon"></i>`;
-            themeToggle.style.bottom = '140px';
-            themeToggle.style.right = '20px';
-            themeToggle.style.zIndex = '100';
+            themeToggle.ariaLabel = 'Cambiar tema';
+            themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            themeToggle.title = isDarkMode ? 'Modo Claro' : 'Modo Oscuro';
             themeToggle.onclick = () => {
                 isDarkMode = !isDarkMode;
                 document.body.classList.toggle('dark-mode', isDarkMode);
                 document.querySelector('.container').classList.toggle('dark-mode', isDarkMode);
                 document.querySelector('header').classList.toggle('dark-mode', isDarkMode);
                 document.querySelector('.cta').classList.toggle('dark-mode', isDarkMode);
-                themeToggle.innerHTML = isDarkMode 
-                    ? `<i class="fas fa-sun"></i>` 
-                    : `<i class="fas fa-moon"></i>`;
-                if (isDarkMode) {
-                    document.documentElement.style.setProperty('--primary', '#1e293b');
-                    document.documentElement.style.setProperty('--secondary', '#60a5fa');
-                    document.documentElement.style.setProperty('--accent', '#f87171');
-                    document.documentElement.style.setProperty('--light', '#1e293b');
-                    document.documentElement.style.setProperty('--dark', '#e2e8f0');
-                    document.documentElement.style.setProperty('--light-gray', '#334155');
-                    document.body.style.background = 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)';
-                    document.querySelector('.header-content').style.color = '#e2e8f0';
-                    document.querySelector('.content').style.color = '#e2e8f0';
-                } else {
-                    document.documentElement.style.setProperty('--primary', '#2c3e50');
-                    document.documentElement.style.setProperty('--secondary', '#3498db');
-                    document.documentElement.style.setProperty('--accent', '#e74c3c');
-                    document.documentElement.style.setProperty('--light', '#ecf0f1');
-                    document.documentElement.style.setProperty('--dark', '#2c3e50');
-                    document.documentElement.style.setProperty('--light-gray', '#f5f5f5');
-                    document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
-                    document.querySelector('.header-content').style.color = 'white';
-                    document.querySelector('.content').style.color = '#333';
-                }
+                themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                themeToggle.title = isDarkMode ? 'Light Mode' : 'Dark Mode';
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
             };
             document.body.appendChild(themeToggle);
 
-            // Guardar preferencia en localStorage
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                isDarkMode = true;
-                themeToggle.click();
-            }
-            themeToggle.addEventListener('click', () => {
-                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            });
-
-            // Añadir atributos de sección para traducción (esto ya lo hiciste manualmente)
-            document.querySelectorAll('section').forEach(section => {
-                section.setAttribute('data-section', section.className.split(' ')[0]);
-            });
+            if (isDarkMode) themeToggle.click();
         });
     </script>
 </body>
