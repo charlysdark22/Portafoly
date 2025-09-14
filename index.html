@@ -8,6 +8,7 @@
     <meta name="keywords" content="desarrollador full stack, react, node.js, python, inteligencia artificial, big data, machine learning, desarrollo web, seo, aplicaciones empresariales, django, tensorflow, postgresql, mongodb">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* [MANTEN LA MISMA ESTILO QUE YA TIENES — NO LO CAMBIES] */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -20,14 +21,12 @@
             --light-gray: #f5f5f5;
             --transition: all 0.3s ease;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
@@ -35,7 +34,6 @@
             padding: 20px;
             transition: background 0.4s ease;
         }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -46,7 +44,6 @@
             position: relative;
             transition: background 0.4s ease;
         }
-
         .loading-bar {
             position: fixed;
             top: 0;
@@ -57,7 +54,6 @@
             z-index: 1000;
             transition: width 0.4s ease;
         }
-
         header {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
@@ -66,12 +62,10 @@
             position: relative;
             transition: background 0.4s ease;
         }
-
         .header-content {
             position: relative;
             z-index: 2;
         }
-
         .profile-img {
             width: 160px;
             height: 160px;
@@ -85,17 +79,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
         }
-
         .profile-img:hover {
             transform: scale(1.05);
         }
-
         .profile-img i,
         .profile-img img {
             font-size: 80px;
             color: var(--gray);
         }
-
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
@@ -103,7 +94,6 @@
             letter-spacing: -0.5px;
             transition: color 0.3s ease;
         }
-
         .tagline {
             font-size: 1.3rem;
             font-weight: 300;
@@ -114,7 +104,6 @@
             color: rgba(255,255,255,0.9);
             transition: color 0.3s ease;
         }
-
         .contact-info {
             display: flex;
             justify-content: center;
@@ -122,7 +111,6 @@
             gap: 25px;
             margin-top: 25px;
         }
-
         .contact-item {
             display: flex;
             align-items: center;
@@ -132,12 +120,10 @@
             border-radius: 30px;
             transition: var(--transition);
         }
-
         .contact-item:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
         }
-
         .contact-item i {
             color: var(--secondary);
             background: white;
@@ -149,24 +135,20 @@
             justify-content: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
-
         .content {
             padding: 40px;
             transition: color 0.3s ease;
         }
-
         section {
             margin-bottom: 40px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
         section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         h2 {
             color: var(--primary);
             border-bottom: 3px solid var(--secondary);
@@ -179,7 +161,6 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
-
         h2 i {
             color: var(--secondary);
             background: var(--light);
@@ -191,7 +172,6 @@
             justify-content: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-
         h3 {
             color: var(--primary);
             margin-bottom: 15px;
@@ -201,17 +181,14 @@
             gap: 10px;
             transition: color 0.3s ease;
         }
-
         h3 i {
             color: var(--secondary);
         }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
-
         .skill-category {
             background: var(--light-gray);
             border-radius: 10px;
@@ -219,16 +196,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-
         .skill-category:hover {
             transform: translateY(-5px);
         }
-
         .skill-list {
             list-style: none;
             padding-left: 5px;
         }
-
         .skill-list li {
             padding: 10px 0;
             display: flex;
@@ -236,22 +210,18 @@
             justify-content: space-between;
             border-bottom: 1px dashed #e0e0e0;
         }
-
         .skill-list li:last-child {
             border-bottom: none;
         }
-
         .skill-list li span {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .skill-list li i {
             color: var(--secondary);
             width: 25px;
         }
-
         .skill-level {
             display: inline-block;
             height: 8px;
@@ -261,20 +231,17 @@
             overflow: hidden;
             margin-left: 10px;
         }
-
         .skill-level-bar {
             height: 100%;
             background: var(--secondary);
             border-radius: 4px;
             transition: width 1.5s ease;
         }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-
         .service-card {
             background: white;
             border: 1px solid #e0e0e0;
@@ -283,19 +250,16 @@
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
             border-color: var(--secondary);
         }
-
         .values {
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
         }
-
         .value-card {
             flex: 1;
             min-width: 250px;
@@ -305,17 +269,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-
         .value-card:hover {
             transform: translateY(-5px);
         }
-
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-
         .project-card {
             background: white;
             border-radius: 10px;
@@ -323,11 +284,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
         }
-
         .project-card:hover {
             transform: translateY(-8px);
         }
-
         .project-img {
             height: 180px;
             background: linear-gradient(45deg, var(--secondary), var(--primary));
@@ -337,18 +296,15 @@
             color: white;
             font-size: 3rem;
         }
-
         .project-content {
             padding: 20px;
         }
-
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 15px;
         }
-
         .project-tag {
             background: var(--light);
             color: var(--dark);
@@ -356,13 +312,11 @@
             border-radius: 20px;
             font-size: 0.8rem;
         }
-
         .certifications {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
-
         .cert-card {
             flex: 1;
             min-width: 250px;
@@ -372,13 +326,11 @@
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-
         .testimonial-card {
             background: white;
             border-radius: 10px;
@@ -386,7 +338,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             position: relative;
         }
-
         .testimonial-card:before {
             content: """;
             position: absolute;
@@ -396,18 +347,15 @@
             color: var(--light);
             z-index: 0;
         }
-
         .testimonial-content {
             position: relative;
             z-index: 1;
         }
-
         .testimonial-author {
             display: flex;
             align-items: center;
             margin-top: 20px;
         }
-
         .testimonial-author img,
         .testimonial-author i {
             width: 50px;
@@ -421,21 +369,18 @@
             justify-content: center;
             color: #666;
         }
-
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             text-align: center;
         }
-
         .stat-card {
             padding: 20px;
             background: var(--light);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
@@ -443,13 +388,11 @@
             margin-bottom: 10px;
             font-family: 'Courier New', monospace;
         }
-
         .stat-label {
             color: var(--dark);
             font-weight: 500;
             font-size: 0.95rem;
         }
-
         .cta {
             text-align: center;
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -459,7 +402,6 @@
             margin-top: 50px;
             transition: background 0.4s ease;
         }
-
         .cta h2 {
             color: white;
             border-bottom: none;
@@ -467,7 +409,6 @@
             font-size: 2.2rem;
             transition: color 0.3s ease;
         }
-
         .cta p {
             max-width: 700px;
             margin: 0 auto 25px;
@@ -475,7 +416,6 @@
             opacity: 0.9;
             transition: color 0.3s ease;
         }
-
         .btn {
             display: inline-block;
             background: white;
@@ -491,23 +431,19 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
         .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
         .btn-outline {
             background: transparent;
             border: 2px solid white;
             color: white;
         }
-
         .btn-outline:hover {
             background: white;
             color: var(--secondary);
         }
-
         .badge {
             display: inline-block;
             background: var(--secondary);
@@ -519,14 +455,12 @@
             font-weight: 500;
             vertical-align: middle;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
-
         .social-link {
             display: flex;
             align-items: center;
@@ -541,26 +475,22 @@
             transition: var(--transition);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-
         .social-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
-
         .download-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 100;
         }
-
         .theme-toggle {
             position: fixed;
             bottom: 80px;
             right: 20px;
             z-index: 100;
         }
-
         .floating-btn {
             width: 60px;
             height: 60px;
@@ -577,49 +507,39 @@
             padding: 0;
             font-size: 1.2rem;
         }
-
         .floating-btn:hover {
             transform: translateY(-5px) rotate(10deg);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-
         /* Animación barras de habilidad */
         @keyframes progress {
             from { width: 0; }
         }
-        
         .skill-level-bar {
             animation: progress 1.5s ease-out forwards;
         }
-
         /* Modo Oscuro */
         body.dark-mode {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
             color: #e2e8f0 !important;
         }
-
         .container.dark-mode {
             background: #1e293b !important;
             color: #e2e8f0 !important;
         }
-
         .header-content.dark-mode {
             color: #e2e8f0 !important;
         }
-
         .content.dark-mode {
             color: #e2e8f0 !important;
         }
-
         header.dark-mode {
             background: linear-gradient(to right, #1e293b, #334155) !important;
         }
-
         .cta.dark-mode {
             background: linear-gradient(to right, #1e293b, #334155) !important;
             color: #e2e8f0 !important;
         }
-
         .skill-category.dark-mode,
         .service-card.dark-mode,
         .value-card.dark-mode,
@@ -631,78 +551,62 @@
             border-color: #475569 !important;
             color: #e2e8f0 !important;
         }
-
         .skill-level-bar,
         .progress-bar {
             background: #60a5fa !important;
         }
-
         .social-link.dark-mode {
             background: #334155 !important;
             color: #60a5fa !important;
         }
-
         .floating-btn.dark-mode {
             background: #334155 !important;
             color: #60a5fa !important;
         }
-
         .btn-outline.dark-mode {
             border-color: #60a5fa !important;
             color: #60a5fa !important;
         }
-
         .btn-outline.dark-mode:hover {
             background: #60a5fa !important;
             color: #1e293b !important;
         }
-
         .btn.dark-mode {
             background: #60a5fa !important;
             color: #1e293b !important;
         }
-
         .btn.dark-mode:hover {
             box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3) !important;
         }
-
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
             }
-            
             .contact-item {
                 width: 100%;
                 justify-content: center;
             }
-            
             .services-grid, .projects, .skills-grid, .testimonials, .stats, .certifications {
                 grid-template-columns: 1fr;
             }
-            
             h1 {
                 font-size: 2.2rem;
             }
-            
             .tagline {
                 font-size: 1.1rem;
             }
-            
             .content {
                 padding: 25px;
             }
-            
             .cta h2 {
                 font-size: 1.8rem;
             }
-            
             .download-btn, .theme-toggle {
                 bottom: 10px;
                 right: 10px;
             }
-            
             .theme-toggle {
                 bottom: 80px;
             }
@@ -711,13 +615,11 @@
 </head>
 <body>
     <div class="loading-bar" id="loadingBar"></div>
-    
     <div class="container">
         <header>
             <div class="header-content">
                 <!-- Foto personal (reemplaza la URL si tienes una) -->
                 <img src="https://charlys-store.com/foto.jpg" alt="Carlos Aguilar" style="width: 160px; height: 160px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); margin: 0 auto 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                
                 <h1>Carlos Aguilar</h1>
                 <p class="tagline">Desarrollador Full Stack & Especialista en Inteligencia Artificial y Big Data | Transformo ideas en soluciones tecnológicas escalables</p>
                 <div class="contact-info">
@@ -736,13 +638,14 @@
                 </div>
             </div>
         </header>
-        
         <div class="content">
+            <!-- ✅ AÑADIDO data-section -->
             <section class="profile" data-section="profile">
                 <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
                 <p>Desarrollador Full Stack con más de <strong>5 años de experiencia</strong> en el diseño y construcción de soluciones digitales de alto rendimiento para empresas y startups. Especializado en <strong>React, Node.js, Python (Django/TensorFlow)</strong> y arquitecturas de <strong>Big Data</strong>. He liderado proyectos desde cero hasta producción, mejorando eficiencias operativas en un <strong>40%+</strong> y aumentando conversiones hasta en un <strong>200%</strong>. Apasionado por la innovación, la automatización y la mejora continua mediante tecnología.</p>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="stats" data-section="stats">
                 <h2><i class="fas fa-chart-line"></i> Estadísticas</h2>
                 <div class="stats">
@@ -764,7 +667,8 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="skills" data-section="skills">
                 <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
                 <div class="skills-grid">
@@ -780,7 +684,6 @@
                             <li><span><i class="fas fa-cube"></i> Quasar Framework</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
                         </ul>
                     </div>
-                    
                     <div class="skill-category">
                         <h3><i class="fas fa-server"></i> Backend & APIs</h3>
                         <ul class="skill-list">
@@ -792,7 +695,6 @@
                             <li><span><i class="fas fa-code"></i> RESTful / GraphQL APIs</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
                         </ul>
                     </div>
-                    
                     <div class="skill-category">
                         <h3><i class="fas fa-database"></i> Bases de Datos & Cloud</h3>
                         <ul class="skill-list">
@@ -803,7 +705,6 @@
                             <li><span><i class="fab fa-aws"></i> AWS / Google Cloud</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
                         </ul>
                     </div>
-                    
                     <div class="skill-category">
                         <h3><i class="fas fa-brain"></i> Inteligencia Artificial & Machine Learning</h3>
                         <ul class="skill-list">
@@ -816,7 +717,8 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="projects" data-section="projects">
                 <h2><i class="fas fa-briefcase"></i> Proyectos Destacados</h2>
                 <div class="projects">
@@ -835,7 +737,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-chart-line"></i>
@@ -851,7 +752,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-mobile-alt"></i>
@@ -869,7 +769,8 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="testimonials" data-section="testimonials">
                 <h2><i class="fas fa-comments"></i> Testimonios</h2>
                 <div class="testimonials">
@@ -885,7 +786,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="testimonial-card">
                         <div class="testimonial-content">
                             <p>"El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos."</p>
@@ -900,7 +800,8 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="services" data-section="services">
                 <h2><i class="fas fa-concierge-bell"></i> Servicios Ofrecidos</h2>
                 <div class="services-grid">
@@ -908,34 +809,30 @@
                         <h3><i class="fas fa-laptop"></i> Desarrollo Web Moderno</h3>
                         <p>Páginas web rápidas, responsivas y optimizadas para SEO, con arquitectura scalable y experiencias de usuario premium.</p>
                     </div>
-                    
                     <div class="service-card">
                         <h3><i class="fas fa-mobile-alt"></i> Aplicaciones Web a Medida</h3>
                         <p>Software personalizado para gestión empresarial: CRM, ERP, sistemas de reservas, inventarios o flujos de trabajo automatizados.</p>
                     </div>
-                    
                     <div class="service-card">
                         <h3><i class="fas fa-server"></i> Hosting y DevOps</h3>
                         <p>Alojamiento seguro en la nube (AWS/GCP), contenerización con Docker, CI/CD y monitoreo 24/7. Garantía de uptime del 99.9%.</p>
                     </div>
-                    
                     <div class="service-card">
                         <h3><i class="fas fa-desktop"></i> Soluciones de Alquiler Digital</h3>
                         <p>Obtén una web profesional lista para usar en 7 días, sin inversión inicial. Incluye hosting, dominio y soporte técnico mensual.</p>
                     </div>
-                    
                     <div class="service-card">
                         <h3><i class="fas fa-robot"></i> IA y Automatización Empresarial</h3>
                         <p>Implemento modelos de Machine Learning para predicción, clasificación y automatización de procesos repetitivos.</p>
                     </div>
-                    
                     <div class="service-card">
                         <h3><i class="fas fa-chart-line"></i> Optimización SEO y UX</h3>
                         <p>Mejoro el posicionamiento orgánico, velocidad de carga y experiencia de usuario para maximizar conversiones y retención.</p>
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="certifications" data-section="certifications">
                 <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
                 <div class="certifications">
@@ -957,7 +854,8 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!-- ✅ AÑADIDO data-section -->
             <section class="advantages" data-section="advantages">
                 <h2><i class="fas fa-star"></i> ¿Por qué elegirme?</h2>
                 <div class="values">
@@ -965,17 +863,14 @@
                         <h3><i class="fas fa-check-circle"></i> Resultados, no solo código</h3>
                         <p>No solo construyo software: genero valor real. Mis proyectos aumentan ventas, reducen costos y optimizan procesos.</p>
                     </div>
-                    
                     <div class="value-card">
                         <h3><i class="fas fa-user-check"></i> Expertise en IA y Big Data</h3>
                         <p>Soy uno de los pocos desarrolladores en Cuba con experiencia práctica en implementar modelos de ML en entornos productivos.</p>
                     </div>
-                    
                     <div class="value-card">
                         <h3><i class="fas fa-headset"></i> Soporte Continuo</h3>
                         <p>Incluyo 3 meses de soporte técnico post-entrega y guía de uso. No te dejo solo después del lanzamiento.</p>
                     </div>
-                    
                     <div class="value-card">
                         <h3><i class="fas fa-shield-alt"></i> Transparencia Total</h3>
                         <p>Sin costes ocultos. Te doy presupuestos claros, plazos reales y actualizaciones semanales. Tu proyecto es tu prioridad.</p>
@@ -983,13 +878,11 @@
                 </div>
             </section>
         </div>
-        
         <section class="cta">
             <h2><i class="fas fa-rocket"></i> ¡Convierte tu visión en digital!</h2>
             <p>¿Necesitas una web potente, una app empresarial o un sistema de IA? Contacta hoy para una consultoría gratuita y descubre cómo puedo llevar tu negocio al siguiente nivel.</p>
             <a href="mailto:carlosaguilardark22@gmail.com" class="btn"><i class="fas fa-envelope"></i> Contactar por Email</a>
             <a href="https://wa.me/53932292" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
-            
             <div class="social-links">
                 <a href="https://linkedin.com/in/carlosaguilar" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/carlosaguilar" class="social-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1028,7 +921,6 @@
         // Animación de scroll para las secciones
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('section');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1036,7 +928,6 @@
                     }
                 });
             }, { threshold: 0.1 });
-            
             sections.forEach(section => {
                 observer.observe(section);
             });
@@ -1044,8 +935,6 @@
             // === DESCARGAR PDF ===
             document.getElementById('downloadBtn').addEventListener('click', async function() {
                 const element = document.querySelector('.container');
-                
-                // Mostrar mensaje de generación
                 const originalBtnContent = this.innerHTML;
                 this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando PDF...';
                 this.disabled = true;
@@ -1061,11 +950,8 @@
                             jsPDF: { orientation: 'portrait', unit: 'in', format: 'a4' }
                         })
                         .save();
-
-                    // Restaurar botón
                     this.innerHTML = '<i class="fas fa-download"></i>';
                     this.disabled = false;
-                    
                 } catch (error) {
                     alert('Hubo un error al generar el PDF. Por favor, intenta nuevamente.');
                     this.innerHTML = '<i class="fas fa-download"></i>';
@@ -1102,24 +988,20 @@
                     label2: "Tasa de Satisfacción",
                     label3: "Años de Experiencia",
                     label4: "Tecnologías Dominadas",
-                    // Servicios
                     service1: "Desarrollo Web Moderno",
                     service2: "Aplicaciones Web a Medida",
                     service3: "Hosting y DevOps",
                     service4: "Soluciones de Alquiler Digital",
                     service5: "IA y Automatización Empresarial",
                     service6: "Optimización SEO y UX",
-                    // Certificaciones
                     cert1: "Meta Certified React Developer",
                     cert2: "Google Cloud Professional Developer",
                     cert3: "AWS Solutions Architect Associate",
                     cert4: "IBM AI Foundations for Business",
-                    // Testimonios
                     testimonial1: "Carlos diseñó y desarrolló nuestra plataforma de e-commerce desde cero. Su capacidad para integrar inteligencia artificial en la experiencia de usuario nos permitió aumentar nuestras conversiones en un 200%. ¡Profesionalismo absoluto!",
                     testimonial2: "El sistema de análisis predictivo que implementó Carlos redujo nuestros costos de inventario en un 37% y mejoró la precisión de nuestras previsiones de ventas. Un verdadero experto en datos.",
                     author1: "María González, Directora de Marketing, TechSolutions",
                     author2: "Javier Rodríguez, Gerente de Operaciones, LogiTech",
-                    // Botones y textos
                     switchLang: "EN",
                     switchTheme: "Modo Oscuro"
                 },
@@ -1150,24 +1032,20 @@
                     label2: "Client Satisfaction Rate",
                     label3: "Years of Experience",
                     label4: "Technologies Mastered",
-                    // Services
                     service1: "Modern Web Development",
                     service2: "Custom Web Applications",
                     service3: "Hosting & DevOps",
                     service4: "Digital Rental Solutions",
                     service5: "AI & Business Automation",
                     service6: "SEO & UX Optimization",
-                    // Certifications
                     cert1: "Meta Certified React Developer",
                     cert2: "Google Cloud Professional Developer",
                     cert3: "AWS Solutions Architect Associate",
                     cert4: "IBM AI Foundations for Business",
-                    // Testimonials
                     testimonial1: "Carlos designed and developed our e-commerce platform from scratch. His ability to integrate AI into the user experience increased our conversions by 200%. Absolute professionalism!",
                     testimonial2: "The predictive analytics system Carlos implemented reduced our inventory costs by 37% and improved sales forecasting accuracy. A true data expert.",
                     author1: "María González, Marketing Director, TechSolutions",
                     author2: "Javier Rodríguez, Operations Manager, LogiTech",
-                    // Buttons and UI
                     switchLang: "ES",
                     switchTheme: "Dark Mode"
                 }
@@ -1195,14 +1073,14 @@
                 document.querySelector('.btn:nth-child(1)').textContent = t.btnEmail;
                 document.querySelector('.btn:nth-child(2)').textContent = t.btnWhatsApp;
                 document.getElementById('downloadBtn').title = t.downloadBtn;
-                
-                // Stats
+
+                // Actualizar etiquetas de estadísticas
                 document.querySelectorAll('.stat-label')[0].textContent = t.label1;
                 document.querySelectorAll('.stat-label')[1].textContent = t.label2;
                 document.querySelectorAll('.stat-label')[2].textContent = t.label3;
                 document.querySelectorAll('.stat-label')[3].textContent = t.label4;
 
-                // Services
+                // Actualizar servicios
                 document.querySelectorAll('.service-card h3')[0].textContent = t.service1;
                 document.querySelectorAll('.service-card h3')[1].textContent = t.service2;
                 document.querySelectorAll('.service-card h3')[2].textContent = t.service3;
@@ -1210,13 +1088,13 @@
                 document.querySelectorAll('.service-card h3')[4].textContent = t.service5;
                 document.querySelectorAll('.service-card h3')[5].textContent = t.service6;
 
-                // Certifications
+                // Actualizar certificaciones
                 document.querySelectorAll('.cert-card h3')[0].textContent = t.cert1;
                 document.querySelectorAll('.cert-card h3')[1].textContent = t.cert2;
                 document.querySelectorAll('.cert-card h3')[2].textContent = t.cert3;
                 document.querySelectorAll('.cert-card h3')[3].textContent = t.cert4;
 
-                // Testimonials
+                // Actualizar testimonios
                 document.querySelectorAll('.testimonial-content p')[0].textContent = t.testimonial1;
                 document.querySelectorAll('.testimonial-content p')[1].textContent = t.testimonial2;
                 document.querySelectorAll('.testimonial-author strong')[0].textContent = t.author1.split(',')[0];
@@ -1246,7 +1124,6 @@
 
             // === CAMBIO DE TEMA (OSCURO/CLARO) ===
             let isDarkMode = false;
-
             const themeToggle = document.createElement('button');
             themeToggle.className = 'floating-btn theme-toggle';
             themeToggle.id = 'themeToggle';
@@ -1261,13 +1138,9 @@
                 document.querySelector('.container').classList.toggle('dark-mode', isDarkMode);
                 document.querySelector('header').classList.toggle('dark-mode', isDarkMode);
                 document.querySelector('.cta').classList.toggle('dark-mode', isDarkMode);
-
-                // Cambiar icono
                 themeToggle.innerHTML = isDarkMode 
                     ? `<i class="fas fa-sun"></i>` 
                     : `<i class="fas fa-moon"></i>`;
-                
-                // Cambiar colores CSS dinámicos
                 if (isDarkMode) {
                     document.documentElement.style.setProperty('--primary', '#1e293b');
                     document.documentElement.style.setProperty('--secondary', '#60a5fa');
@@ -1298,17 +1171,14 @@
                 isDarkMode = true;
                 themeToggle.click();
             }
-
-            // Guardar cambios en localStorage
             themeToggle.addEventListener('click', () => {
                 localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
             });
 
-            // Añadir atributos de sección para traducción
+            // Añadir atributos de sección para traducción (esto ya lo hiciste manualmente)
             document.querySelectorAll('section').forEach(section => {
                 section.setAttribute('data-section', section.className.split(' ')[0]);
             });
-
         });
     </script>
 </body>
