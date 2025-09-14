@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Aguilar - Desarrollador Full Stack</title>
+    <title>Carlos Aguilar - Desarrollador Full Stack & Especialista en Soluciones Digitales</title>
+    <meta name="description" content="Desarrollador Full Stack con expertise en React, Node.js, Python, IA y Big Data. Creación de soluciones web personalizadas y optimizadas.">
+    <meta name="keywords" content="desarrollador full stack, desarrollo web, react, node.js, python, inteligencia artificial, big data, SEO, aplicaciones web">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,6 +18,7 @@
             --warning: #f39c12;
             --gray: #7f8c8d;
             --light-gray: #f5f5f5;
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -35,6 +38,878 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--secondary);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.4s ease;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-img i {
+            font-size: 80px;
+            color: var(--gray);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            background: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+        }
+        
+        h2 i {
+            color: var(--secondary);
+            background: var(--light);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h3 i {
+            color: var(--secondary);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-list li span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-list li i {
+            color: var(--secondary);
+            width: 25px;
+        }
+        
+        .skill-level {
+            display: inline-block;
+            height: 8px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            width: 100px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+        
+        .skill-level-bar {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .value-card {
+            flex: 1;
+            min-width: 250px;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .project-img {
+            height: 180px;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .project-tag {
+            background: var(--light);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .cert-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-left: 5px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 60px;
+            color: var(--light);
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-card {
+            padding: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 40px;
+            border-radius: 10px;
+        }
+        
+        .cta h2 {
+            color: white;
+            border-bottom: none;
+            justify-content: center;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--secondary);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--secondary);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .services-grid, .projects, .skills-grid, .testimonials, .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .download-btn, .theme-toggle {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .theme-toggle {
+                bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-bar" id="loadingBar"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="profile-img">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h1>Carlos Aguilar</h1>
+                <p class="tagline">Desarrollador Full Stack & Especialista en Soluciones Digitales</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>carlosaguilardark22@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>https://charlys-store.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+53 53932292</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <section class="profile">
+                <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
+                <p>Desarrollador full stack con más de 5 años de experiencia creando soluciones digitales personalizadas, optimizadas y visualmente atractivas. Especializado en el desarrollo de aplicaciones web modernas, inteligencia artificial y big data. Comprometido con la excelencia técnica, la experiencia del usuario y la satisfacción del cliente. Mi objetivo es transformar ideas en productos digitales funcionales y escalables.</p>
+            </section>
+            
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Tecnologías Dominadas</div>
+                </div>
+            </section>
+            
+            <section class="skills">
+                <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fab fa-react"></i> Frontend</h3>
+                        <ul class="skill-list">
+                            <li><span><i class="fab fa-html5"></i> HTML5</span><div class="skill-level"><div class="skill-level-bar" style="width: 95%"></div></div></li>
+                            <li><span><i class="fab fa-css3-alt"></i> CSS3</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fab fa-js"></i> JavaScript</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
+                            <li><span><i class="fab fa-react"></i> React</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fab fa-angular"></i> Angular</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-rocket"></i> Astro</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-cube"></i> Quasar</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Backend</h3>
+                        <ul class="skill-list">
+                            <li><span><i class="fab fa-node-js"></i> Node.js</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fab fa-php"></i> PHP <span class="badge">Laravel</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fab fa-python"></i> Python <span class="badge">Django</span></span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
+                            <li><span><i class="fab fa-java"></i> Java</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-cogs"></i> Odoo</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-code"></i> APIs RESTful</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+                        <ul class="skill-list">
+                            <li><span><i class="fas fa-database"></i> SQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 90%"></div></div></li>
+                            <li><span><i class="fas fa-database"></i> PostgreSQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fas fa-database"></i> MySQL</span><div class="skill-level"><div class="skill-level-bar" style="width: 88%"></div></div></li>
+                            <li><span><i class="fas fa-database"></i> MongoDB</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-chart-bar"></i> Big Data Solutions</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+                        <ul class="skill-list">
+                            <li><span><i class="fas fa-robot"></i> Machine Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 85%"></div></div></li>
+                            <li><span><i class="fas fa-brain"></i> Deep Learning</span><div class="skill-level"><div class="skill-level-bar" style="width: 80%"></div></div></li>
+                            <li><span><i class="fas fa-language"></i> Procesamiento NLP</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                            <li><span><i class="fas fa-eye"></i> Computer Vision</span><div class="skill-level"><div class="skill-level-bar" style="width: 70%"></div></div></li>
+                            <li><span><i class="fas fa-project-diagram"></i> TensorFlow/PyTorch</span><div class="skill-level"><div class="skill-level-bar" style="width: 75%"></div></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="projects">
+                <h2><i class="fas fa-briefcase"></i> Proyectos Destacados</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-commerce Platform</h3>
+                            <p>Plataforma de comercio electrónico desarrollada con React, Node.js y MongoDB. Incluye panel de administración, pasarela de pago y sistema de recomendaciones.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema de Análisis de Datos</h3>
+                            <p>Sistema de big data para análisis predictivo de ventas utilizando Python, TensorFlow y PostgreSQL. Procesa millones de registros para generar insights empresariales.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">TensorFlow</span>
+                                <span class="project-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>App de Gestión de Tareas</h3>
+                            <p>Aplicación web progresiva para gestión de proyectos desarrollada con Angular and Laravel. Incluye funciones colaborativas en tiempo real y reporting avanzado.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Angular</span>
+                                <span class="project-tag">Laravel</span>
+                                <span class="project-tag">PWA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testimonials">
+                <h2><i class="fas fa-comments"></i> Testimonios</h2>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Carlos transformó completamente nuestra presencia digital. Su expertise en desarrollo web y SEO aumentó nuestro tráfico orgánico en un 200% en solo 6 meses."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <strong>María González</strong>
+                                    <p>Directora de Marketing, TechSolutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"El sistema de gestión que desarrolló Carlos ha optimizado nuestros procesos internos, ahorrándonos más de 20 horas de trabajo manual cada semana."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <strong>Javier Rodríguez</strong>
+                                    <p>Gerente de Operaciones, LogiTech</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="services">
+                <h2><i class="fas fa-concierge-bell"></i> Servicios Ofrecidos</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3><i class="fas fa-laptop"></i> Creación de Páginas Web</h3>
+                        <p>Diseños únicos y profesionales, optimizados para motores de búsqueda (SEO) y perfectamente adaptados a móviles y tablets.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-mobile-alt"></i> Desarrollo de Aplicaciones Web</h3>
+                        <p>Creamos software a medida para gestionar inventario, citas, reservas, o cualquier necesidad específica de tu empresa.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-server"></i> Hosting de Alto Rendimiento</h3>
+                        <p>Tu sitio web estará alojado en servidores robustos con máxima seguridad, velocidad y disponibilidad. Backups automáticos incluidos.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-desktop"></i> Alquiler de Sitios Web</h3>
+                        <p>La solución perfecta para quien necesita una web profesional inmediata, sin una gran inversión inicial.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-robot"></i> Soluciones de IA y Big Data</h3>
+                        <p>Desarrollo de sistemas inteligentes para análisis de datos, automatización y toma de decisiones empresariales.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3><i class="fas fa-chart-line"></i> Optimización y SEO</h3>
+                        <p>Mejora del posicionamiento en buscadores, velocidad y experiencia de usuario para maximizar conversiones.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="certifications">
+                <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
+                <div class="certifications">
+                    <div class="cert-card">
+                        <h3>React Developer Certification</h3>
+                        <p>Meta - 2023</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>Google Cloud Professional Developer</h3>
+                        <p>Google - 2022</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>AWS Solutions Architect</h3>
+                        <p>Amazon Web Services - 2021</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="advantages">
+                <h2><i class="fas fa-star"></i> ¿Por qué elegirnos?</h2>
+                <div class="values">
+                    <div class="value-card">
+                        <h3><i class="fas fa-check-circle"></i> Un único proveedor</h3>
+                        <p>Simplifica la gestión y el soporte con un proveedor integral para todas tus necesidades digitales.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3><i class="fas fa-user-check"></i> Expertos en experiencia de usuario</h3>
+                        <p>Creamos sitios intuitivos y agradables para tus clientes, maximizando la conversión.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3><i class="fas fa-headset"></i> Soporte técnico dedicado</h3>
+                        <p>Resolvemos tus dudas y problemas rápidamente, con un soporte personalizado y eficiente.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3><i class="fas fa-shield-alt"></i> Transparencia total</h3>
+                        <p>Sin costes ocultos. Sabrás siempre lo que pagas y por qué, sin sorpresas desagradables.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="cta">
+            <h2><i class="fas fa-rocket"></i> ¡Convierte tu visión en digital!</h2>
+            <p>Contacta con nosotros hoy mismo para una consultoría gratuita y descubre cómo podemos llevar tu negocio al siguiente nivel.</p>
+            <a href="mailto:carlosaguilardark22@gmail.com" class="btn"><i class="fas fa-envelope"></i> Contactar por Email</a>
+            <a href="https://wa.me/53932292" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="download-btn">
+        <a href="#" class="floating-btn" id="downloadBtn" title="Descargar CV en PDF">
+            <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+    <script>
+        // Animación de carga
+        window.addEventListener('load', function() {
+            const loadingBar = document.getElementById('loadingBar');
+            loadingBar.style.width = '100%';
+            
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+            }, 500);
+        });
+
+        // Animación de scroll para las secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Simular descarga de PDF
+            document.getElementById('downloadBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Función de descarga de PDF habilitada. En una implementación real, esto descargaría tu CV en formato PDF.');
+                // Aquí iría la lógica real para generar/descargar el PDF
+            });
+        });
+    </script>
+</body>
+                                                                                                                                                                                </html>            margin: 0 auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
